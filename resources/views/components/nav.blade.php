@@ -7,7 +7,7 @@
         {{-- If you use user icon and menu add margin mr-3 to search --}}
         {{-- <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"> --}}
         <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto">
-
+            @livewire('global-search')
         </form>
 
 

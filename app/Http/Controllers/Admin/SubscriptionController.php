@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Traits\WithCSVImport;
 use App\Models\Subscription;
 use Gate;
 use Illuminate\Http\Request;
@@ -10,6 +11,8 @@ use Illuminate\Http\Response;
 
 class SubscriptionController extends Controller
 {
+    use WithCSVImport;
+
     public function index()
     {
         abort_if(Gate::denies('subscription_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -35,8 +38,13 @@ class SubscriptionController extends Controller
     {
         abort_if(Gate::denies('subscription_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $subscription->load('customer', 'product', 'paymentPlan');
+        $subscription->load('customer', 'paymentPlan', 'product');
 
         return view('admin.subscription.show', compact('subscription'));
+    }
+
+    public function __construct()
+    {
+        $this->csvImportModel = Subscription::class;
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Support\HasAdvancedFilter;
+use App\Traits\Auditable;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PaymentPlan extends Model
 {
-    use HasFactory, HasAdvancedFilter, SoftDeletes;
+    use HasFactory, HasAdvancedFilter, SoftDeletes, Auditable;
 
     public $table = 'payment_plans';
 

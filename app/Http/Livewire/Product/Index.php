@@ -67,7 +67,7 @@ class Index extends Component
 
     public function render()
     {
-        $query = Product::with(['business', 'category'])->advancedFilter([
+        $query = Product::with(['category', 'tag', 'bisiness'])->advancedFilter([
             's'               => $this->search ?: null,
             'order_column'    => $this->sortBy,
             'order_direction' => $this->sortDirection,

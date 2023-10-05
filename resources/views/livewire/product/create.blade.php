@@ -20,44 +20,54 @@
             {{ trans('cruds.product.fields.description_helper') }}
         </div>
     </div>
-    <div class="form-group {{ $errors->has('mediaCollections.product_picture') ? 'invalid' : '' }}">
-        <label class="form-label required" for="picture">{{ trans('cruds.product.fields.picture') }}</label>
-        <x-dropzone id="picture" name="picture" action="{{ route('admin.products.storeMedia') }}" collection-name="product_picture" max-file-size="10" max-width="4096" max-height="4096" />
+    <div class="form-group {{ $errors->has('product.price') ? 'invalid' : '' }}">
+        <label class="form-label required" for="price">{{ trans('cruds.product.fields.price') }}</label>
+        <input class="form-control" type="number" name="price" id="price" required wire:model.defer="product.price" step="0.01">
         <div class="validation-message">
-            {{ $errors->first('mediaCollections.product_picture') }}
+            {{ $errors->first('product.price') }}
         </div>
         <div class="help-block">
-            {{ trans('cruds.product.fields.picture_helper') }}
+            {{ trans('cruds.product.fields.price_helper') }}
         </div>
     </div>
-    <div class="form-group {{ $errors->has('product.unit_price') ? 'invalid' : '' }}">
-        <label class="form-label required" for="unit_price">{{ trans('cruds.product.fields.unit_price') }}</label>
-        <input class="form-control" type="number" name="unit_price" id="unit_price" required wire:model.defer="product.unit_price" step="0.01">
+    <div class="form-group {{ $errors->has('category') ? 'invalid' : '' }}">
+        <label class="form-label" for="category">{{ trans('cruds.product.fields.category') }}</label>
+        <x-select-list class="form-control" id="category" name="category" wire:model="category" :options="$this->listsForFields['category']" multiple />
         <div class="validation-message">
-            {{ $errors->first('product.unit_price') }}
-        </div>
-        <div class="help-block">
-            {{ trans('cruds.product.fields.unit_price_helper') }}
-        </div>
-    </div>
-    <div class="form-group {{ $errors->has('product.business_id') ? 'invalid' : '' }}">
-        <label class="form-label required" for="business">{{ trans('cruds.product.fields.business') }}</label>
-        <x-select-list class="form-control" required id="business" name="business" :options="$this->listsForFields['business']" wire:model="product.business_id" />
-        <div class="validation-message">
-            {{ $errors->first('product.business_id') }}
-        </div>
-        <div class="help-block">
-            {{ trans('cruds.product.fields.business_helper') }}
-        </div>
-    </div>
-    <div class="form-group {{ $errors->has('product.category_id') ? 'invalid' : '' }}">
-        <label class="form-label required" for="category">{{ trans('cruds.product.fields.category') }}</label>
-        <x-select-list class="form-control" required id="category" name="category" :options="$this->listsForFields['category']" wire:model="product.category_id" />
-        <div class="validation-message">
-            {{ $errors->first('product.category_id') }}
+            {{ $errors->first('category') }}
         </div>
         <div class="help-block">
             {{ trans('cruds.product.fields.category_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('tag') ? 'invalid' : '' }}">
+        <label class="form-label" for="tag">{{ trans('cruds.product.fields.tag') }}</label>
+        <x-select-list class="form-control" id="tag" name="tag" wire:model="tag" :options="$this->listsForFields['tag']" multiple />
+        <div class="validation-message">
+            {{ $errors->first('tag') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.product.fields.tag_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('mediaCollections.product_photo') ? 'invalid' : '' }}">
+        <label class="form-label" for="photo">{{ trans('cruds.product.fields.photo') }}</label>
+        <x-dropzone id="photo" name="photo" action="{{ route('admin.products.storeMedia') }}" collection-name="product_photo" max-file-size="2" max-width="4096" max-height="4096" max-files="1" />
+        <div class="validation-message">
+            {{ $errors->first('mediaCollections.product_photo') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.product.fields.photo_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('product.bisiness_id') ? 'invalid' : '' }}">
+        <label class="form-label required" for="bisiness">{{ trans('cruds.product.fields.bisiness') }}</label>
+        <x-select-list class="form-control" required id="bisiness" name="bisiness" :options="$this->listsForFields['bisiness']" wire:model="product.bisiness_id" />
+        <div class="validation-message">
+            {{ $errors->first('product.bisiness_id') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.product.fields.bisiness_helper') }}
         </div>
     </div>
 

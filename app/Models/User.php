@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Support\HasAdvancedFilter;
+use App\Traits\Auditable;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Hash;
@@ -15,7 +16,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements HasLocalePreference
 {
-    use HasFactory, HasAdvancedFilter, Notifiable, SoftDeletes;
+    use HasFactory, HasAdvancedFilter, Notifiable, SoftDeletes, Auditable;
 
     public $table = 'users';
 

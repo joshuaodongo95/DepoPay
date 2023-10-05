@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Support\HasAdvancedFilter;
+use App\Traits\Auditable;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,12 +15,12 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Product extends Model implements HasMedia
 {
-    use HasFactory, HasAdvancedFilter, SoftDeletes, InteractsWithMedia;
+    use HasFactory, HasAdvancedFilter, SoftDeletes, InteractsWithMedia, Auditable;
 
     public $table = 'products';
 
     protected $appends = [
-        'picture',
+        'photo',
     ];
 
     protected $dates = [
@@ -31,37 +32,36 @@ class Product extends Model implements HasMedia
     protected $fillable = [
         'name',
         'description',
-        'unit_price',
-        'business_id',
-        'category_id',
+        'price',
+        'bisiness_id',
     ];
 
     public $orderable = [
         'id',
         'name',
         'description',
-        'unit_price',
-        'business.name',
-        'business.registration_number',
-        'business.address',
-        'business.phone',
-        'business.email',
-        'business.website',
-        'category.name',
+        'price',
+        'bisiness.name',
+        'bisiness.registration_number',
+        'bisiness.address',
+        'bisiness.phone',
+        'bisiness.email',
+        'bisiness.website',
     ];
 
     public $filterable = [
         'id',
         'name',
         'description',
-        'unit_price',
-        'business.name',
-        'business.registration_number',
-        'business.address',
-        'business.phone',
-        'business.email',
-        'business.website',
+        'price',
         'category.name',
+        'tag.name',
+        'bisiness.name',
+        'bisiness.registration_number',
+        'bisiness.address',
+        'bisiness.phone',
+        'bisiness.email',
+        'bisiness.website',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -87,9 +87,19 @@ class Product extends Model implements HasMedia
             ->fit('crop', $thumbnailPreviewWidth, $thumbnailPreviewHeight);
     }
 
-    public function getPictureAttribute()
+    public function category()
     {
-        return $this->getMedia('product_picture')->map(function ($item) {
+        return $this->belongsToMany(ProductCategory::class);
+    }
+
+    public function tag()
+    {
+        return $this->belongsToMany(ProductTag::class);
+    }
+
+    public function getPhotoAttribute()
+    {
+        return $this->getMedia('product_photo')->map(function ($item) {
             $media                      = $item->toArray();
             $media['url']               = $item->getUrl();
             $media['thumbnail']         = $item->getUrl('thumbnail');
@@ -99,14 +109,9 @@ class Product extends Model implements HasMedia
         });
     }
 
-    public function business()
+    public function bisiness()
     {
         return $this->belongsTo(Business::class);
-    }
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
     }
 
     public function getCreatedAtAttribute($value)

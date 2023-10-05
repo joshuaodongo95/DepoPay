@@ -20,6 +20,16 @@
             {{ trans('cruds.wallet.fields.msisdn_helper') }}
         </div>
     </div>
+    <div class="form-group {{ $errors->has('wallet.business_id') ? 'invalid' : '' }}">
+        <label class="form-label" for="business">{{ trans('cruds.wallet.fields.business') }}</label>
+        <x-select-list class="form-control" id="business" name="business" :options="$this->listsForFields['business']" wire:model="wallet.business_id" />
+        <div class="validation-message">
+            {{ $errors->first('wallet.business_id') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.wallet.fields.business_helper') }}
+        </div>
+    </div>
 
     <div class="form-group">
         <button class="btn btn-indigo mr-2" type="submit">

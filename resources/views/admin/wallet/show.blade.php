@@ -41,6 +41,16 @@
                                 {{ $wallet->msisdn }}
                             </td>
                         </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.wallet.fields.business') }}
+                            </th>
+                            <td>
+                                @if($wallet->business)
+                                    <span class="badge badge-relationship">{{ $wallet->business->name ?? '' }}</span>
+                                @endif
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

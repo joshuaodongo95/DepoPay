@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Wallet;
 
+use App\Models\Business;
 use App\Models\Wallet;
 use Livewire\Component;
 
@@ -9,9 +10,12 @@ class Edit extends Component
 {
     public Wallet $wallet;
 
+    public array $listsForFields = [];
+
     public function mount(Wallet $wallet)
     {
         $this->wallet = $wallet;
+        $this->initListsForFields();
     }
 
     public function render()
@@ -39,6 +43,16 @@ class Edit extends Component
                 'string',
                 'required',
             ],
+            'wallet.business_id' => [
+                'integer',
+                'exists:businesses,id',
+                'nullable',
+            ],
         ];
+    }
+
+    protected function initListsForFields(): void
+    {
+        $this->listsForFields['business'] = Business::pluck('name', 'id')->toArray();
     }
 }

@@ -27,14 +27,6 @@
                         </tr>
                         <tr>
                             <th>
-                                {{ trans('cruds.subscription.fields.ref') }}
-                            </th>
-                            <td>
-                                {{ $subscription->ref }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
                                 {{ trans('cruds.subscription.fields.customer') }}
                             </th>
                             <td>
@@ -45,12 +37,10 @@
                         </tr>
                         <tr>
                             <th>
-                                {{ trans('cruds.subscription.fields.product') }}
+                                {{ trans('cruds.subscription.fields.ref') }}
                             </th>
                             <td>
-                                @if($subscription->product)
-                                    <span class="badge badge-relationship">{{ $subscription->product->name ?? '' }}</span>
-                                @endif
+                                {{ $subscription->ref }}
                             </td>
                         </tr>
                         <tr>
@@ -77,6 +67,16 @@
                             </th>
                             <td>
                                 {{ $subscription->currency }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.subscription.fields.product') }}
+                            </th>
+                            <td>
+                                @if($subscription->product)
+                                    <span class="badge badge-relationship">{{ $subscription->product->name ?? '' }}</span>
+                                @endif
                             </td>
                         </tr>
                     </tbody>

@@ -67,7 +67,7 @@ class Index extends Component
 
     public function render()
     {
-        $query = Subscription::with(['customer', 'product', 'paymentPlan'])->advancedFilter([
+        $query = Subscription::with(['customer', 'paymentPlan', 'product'])->advancedFilter([
             's'               => $this->search ?: null,
             'order_column'    => $this->sortBy,
             'order_direction' => $this->sortDirection,

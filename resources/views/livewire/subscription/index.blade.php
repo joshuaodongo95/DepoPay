@@ -21,7 +21,9 @@
             @endif
 
 
-
+            @can('subscription_create')
+                <x-csv-import route="{{ route('admin.subscriptions.csv.store') }}" />
+            @endcan
 
         </div>
         <div class="w-full sm:w-1/2 sm:text-right">
@@ -45,10 +47,6 @@
                             @include('components.table.sort', ['field' => 'id'])
                         </th>
                         <th>
-                            {{ trans('cruds.subscription.fields.ref') }}
-                            @include('components.table.sort', ['field' => 'ref'])
-                        </th>
-                        <th>
                             {{ trans('cruds.subscription.fields.customer') }}
                             @include('components.table.sort', ['field' => 'customer.name'])
                         </th>
@@ -57,12 +55,8 @@
                             @include('components.table.sort', ['field' => 'customer.email'])
                         </th>
                         <th>
-                            {{ trans('cruds.subscription.fields.product') }}
-                            @include('components.table.sort', ['field' => 'product.name'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.product.fields.unit_price') }}
-                            @include('components.table.sort', ['field' => 'product.unit_price'])
+                            {{ trans('cruds.subscription.fields.ref') }}
+                            @include('components.table.sort', ['field' => 'ref'])
                         </th>
                         <th>
                             {{ trans('cruds.subscription.fields.payment_plan') }}
@@ -81,6 +75,18 @@
                             @include('components.table.sort', ['field' => 'currency'])
                         </th>
                         <th>
+                            {{ trans('cruds.subscription.fields.product') }}
+                            @include('components.table.sort', ['field' => 'product.name'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.product.fields.description') }}
+                            @include('components.table.sort', ['field' => 'product.description'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.product.fields.price') }}
+                            @include('components.table.sort', ['field' => 'product.price'])
+                        </th>
+                        <th>
                         </th>
                     </tr>
                 </thead>
@@ -92,9 +98,6 @@
                             </td>
                             <td>
                                 {{ $subscription->id }}
-                            </td>
-                            <td>
-                                {{ $subscription->ref }}
                             </td>
                             <td>
                                 @if($subscription->customer)
@@ -111,14 +114,7 @@
                                 @endif
                             </td>
                             <td>
-                                @if($subscription->product)
-                                    <span class="badge badge-relationship">{{ $subscription->product->name ?? '' }}</span>
-                                @endif
-                            </td>
-                            <td>
-                                @if($subscription->product)
-                                    {{ $subscription->product->unit_price ?? '' }}
-                                @endif
+                                {{ $subscription->ref }}
                             </td>
                             <td>
                                 @if($subscription->paymentPlan)
@@ -135,6 +131,21 @@
                             </td>
                             <td>
                                 {{ $subscription->currency }}
+                            </td>
+                            <td>
+                                @if($subscription->product)
+                                    <span class="badge badge-relationship">{{ $subscription->product->name ?? '' }}</span>
+                                @endif
+                            </td>
+                            <td>
+                                @if($subscription->product)
+                                    {{ $subscription->product->description ?? '' }}
+                                @endif
+                            </td>
+                            <td>
+                                @if($subscription->product)
+                                    {{ $subscription->product->price ?? '' }}
+                                @endif
                             </td>
                             <td>
                                 <div class="flex justify-end">

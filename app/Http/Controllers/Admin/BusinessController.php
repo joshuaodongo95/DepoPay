@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Traits\WithCSVImport;
 use App\Models\Business;
 use Gate;
 use Illuminate\Http\Request;
@@ -10,6 +11,8 @@ use Illuminate\Http\Response;
 
 class BusinessController extends Controller
 {
+    use WithCSVImport;
+
     public function index()
     {
         abort_if(Gate::denies('business_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -36,5 +39,10 @@ class BusinessController extends Controller
         abort_if(Gate::denies('business_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.business.show', compact('business'));
+    }
+
+    public function __construct()
+    {
+        $this->csvImportModel = Business::class;
     }
 }

@@ -34,11 +34,6 @@ class UpdateSubscriptionRequest extends FormRequest
                 'exists:users,id',
                 'nullable',
             ],
-            'product_id' => [
-                'integer',
-                'exists:products,id',
-                'required',
-            ],
             'payment_plan_id' => [
                 'integer',
                 'exists:payment_plans,id',
@@ -48,8 +43,13 @@ class UpdateSubscriptionRequest extends FormRequest
                 'nullable',
                 'in:' . implode(',', array_keys(Subscription::STATUS_SELECT)),
             ],
+            'product_id' => [
+                'integer',
+                'exists:products,id',
+                'required',
+            ],
             'currency' => [
-                'numeric',
+                'string',
                 'nullable',
             ],
         ];

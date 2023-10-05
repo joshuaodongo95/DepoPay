@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Support\HasAdvancedFilter;
+use App\Traits\Auditable;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Subscription extends Model
 {
-    use HasFactory, HasAdvancedFilter, SoftDeletes;
+    use HasFactory, HasAdvancedFilter, SoftDeletes, Auditable;
 
     public $table = 'subscriptions';
 
@@ -24,9 +25,9 @@ class Subscription extends Model
     protected $fillable = [
         'ref',
         'customer_id',
-        'product_id',
         'payment_plan_id',
         'status',
+        'product_id',
         'currency',
     ];
 
@@ -42,11 +43,12 @@ class Subscription extends Model
         'ref',
         'customer.name',
         'customer.email',
-        'product.name',
-        'product.unit_price',
         'payment_plan.name',
         'payment_plan.duration',
         'status',
+        'product.name',
+        'product.description',
+        'product.price',
         'currency',
     ];
 
@@ -55,11 +57,12 @@ class Subscription extends Model
         'ref',
         'customer.name',
         'customer.email',
-        'product.name',
-        'product.unit_price',
         'payment_plan.name',
         'payment_plan.duration',
         'status',
+        'product.name',
+        'product.description',
+        'product.price',
         'currency',
     ];
 
@@ -73,11 +76,6 @@ class Subscription extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
-
     public function paymentPlan()
     {
         return $this->belongsTo(PaymentPlan::class);
@@ -86,6 +84,11 @@ class Subscription extends Model
     public function getStatusLabelAttribute($value)
     {
         return static::STATUS_SELECT[$this->status] ?? null;
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
     }
 
     public function getCreatedAtAttribute($value)

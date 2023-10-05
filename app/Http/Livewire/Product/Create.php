@@ -3,14 +3,19 @@
 namespace App\Http\Livewire\Product;
 
 use App\Models\Business;
-use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductCategory;
+use App\Models\ProductTag;
 use Livewire\Component;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Create extends Component
 {
+    public array $tag = [];
+
     public Product $product;
+
+    public array $category = [];
 
     public array $mediaToRemove = [];
 
@@ -57,6 +62,8 @@ class Create extends Component
         $this->validate();
 
         $this->product->save();
+        $this->product->category()->sync($this->category);
+        $this->product->tag()->sync($this->tag);
         $this->syncMedia();
 
         return redirect()->route('admin.products.index');
@@ -73,26 +80,35 @@ class Create extends Component
                 'string',
                 'nullable',
             ],
-            'mediaCollections.product_picture' => [
-                'array',
-                'required',
-            ],
-            'mediaCollections.product_picture.*.id' => [
-                'integer',
-                'exists:media,id',
-            ],
-            'product.unit_price' => [
+            'product.price' => [
                 'numeric',
                 'required',
             ],
-            'product.business_id' => [
+            'category' => [
+                'array',
+            ],
+            'category.*.id' => [
+                'integer',
+                'exists:product_categories,id',
+            ],
+            'tag' => [
+                'array',
+            ],
+            'tag.*.id' => [
+                'integer',
+                'exists:product_tags,id',
+            ],
+            'mediaCollections.product_photo' => [
+                'array',
+                'nullable',
+            ],
+            'mediaCollections.product_photo.*.id' => [
+                'integer',
+                'exists:media,id',
+            ],
+            'product.bisiness_id' => [
                 'integer',
                 'exists:businesses,id',
-                'required',
-            ],
-            'product.category_id' => [
-                'integer',
-                'exists:categories,id',
                 'required',
             ],
         ];
@@ -100,7 +116,8 @@ class Create extends Component
 
     protected function initListsForFields(): void
     {
-        $this->listsForFields['business'] = Business::pluck('name', 'id')->toArray();
-        $this->listsForFields['category'] = Category::pluck('name', 'id')->toArray();
+        $this->listsForFields['category'] = ProductCategory::pluck('name', 'id')->toArray();
+        $this->listsForFields['tag']      = ProductTag::pluck('name', 'id')->toArray();
+        $this->listsForFields['bisiness'] = Business::pluck('name', 'id')->toArray();
     }
 }

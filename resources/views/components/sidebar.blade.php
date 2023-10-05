@@ -22,7 +22,11 @@
                 </div>
             </div>
 
-
+            <form class="mt-6 mb-4 md:hidden">
+                <div class="mb-3 pt-0">
+                    @livewire('global-search')
+                </div>
+            </form>
 
             <!-- Divider -->
             <div class="flex md:hidden">
@@ -43,7 +47,7 @@
 
                 @can('user_management_access')
                     <li class="items-center">
-                        <a class="has-sub {{ request()->is("admin/permissions*")||request()->is("admin/roles*")||request()->is("admin/users*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="#" onclick="window.openSubNav(this)">
+                        <a class="has-sub {{ request()->is("admin/permissions*")||request()->is("admin/roles*")||request()->is("admin/users*")||request()->is("admin/audit-logs*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="#" onclick="window.openSubNav(this)">
                             <i class="fa-fw fas c-sidebar-nav-icon fa-users">
                             </i>
                             {{ trans('cruds.userManagement.title') }}
@@ -73,6 +77,15 @@
                                         <i class="fa-fw c-sidebar-nav-icon fas fa-user">
                                         </i>
                                         {{ trans('cruds.user.title') }}
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('audit_log_access')
+                                <li class="items-center">
+                                    <a class="{{ request()->is("admin/audit-logs*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.audit-logs.index") }}">
+                                        <i class="fa-fw c-sidebar-nav-icon fas fa-file-alt">
+                                        </i>
+                                        {{ trans('cruds.auditLog.title') }}
                                     </a>
                                 </li>
                             @endcan
@@ -106,24 +119,6 @@
                         </a>
                     </li>
                 @endcan
-                @can('product_access')
-                    <li class="items-center">
-                        <a class="{{ request()->is("admin/products*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.products.index") }}">
-                            <i class="fa-fw c-sidebar-nav-icon fas fa-cogs">
-                            </i>
-                            {{ trans('cruds.product.title') }}
-                        </a>
-                    </li>
-                @endcan
-                @can('category_access')
-                    <li class="items-center">
-                        <a class="{{ request()->is("admin/categories*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.categories.index") }}">
-                            <i class="fa-fw c-sidebar-nav-icon fas fa-cogs">
-                            </i>
-                            {{ trans('cruds.category.title') }}
-                        </a>
-                    </li>
-                @endcan
                 @can('subscription_access')
                     <li class="items-center">
                         <a class="{{ request()->is("admin/subscriptions*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.subscriptions.index") }}">
@@ -131,6 +126,44 @@
                             </i>
                             {{ trans('cruds.subscription.title') }}
                         </a>
+                    </li>
+                @endcan
+                @can('product_management_access')
+                    <li class="items-center">
+                        <a class="has-sub {{ request()->is("admin/product-categories*")||request()->is("admin/product-tags*")||request()->is("admin/products*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="#" onclick="window.openSubNav(this)">
+                            <i class="fa-fw fas c-sidebar-nav-icon fa-shopping-cart">
+                            </i>
+                            {{ trans('cruds.productManagement.title') }}
+                        </a>
+                        <ul class="ml-4 subnav hidden">
+                            @can('product_category_access')
+                                <li class="items-center">
+                                    <a class="{{ request()->is("admin/product-categories*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.product-categories.index") }}">
+                                        <i class="fa-fw c-sidebar-nav-icon fas fa-folder">
+                                        </i>
+                                        {{ trans('cruds.productCategory.title') }}
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('product_tag_access')
+                                <li class="items-center">
+                                    <a class="{{ request()->is("admin/product-tags*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.product-tags.index") }}">
+                                        <i class="fa-fw c-sidebar-nav-icon fas fa-folder">
+                                        </i>
+                                        {{ trans('cruds.productTag.title') }}
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('product_access')
+                                <li class="items-center">
+                                    <a class="{{ request()->is("admin/products*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.products.index") }}">
+                                        <i class="fa-fw c-sidebar-nav-icon fas fa-shopping-cart">
+                                        </i>
+                                        {{ trans('cruds.product.title') }}
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
                     </li>
                 @endcan
 

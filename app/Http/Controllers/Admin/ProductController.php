@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Traits\WithCSVImport;
 use App\Models\Product;
 use Gate;
 use Illuminate\Http\Request;
@@ -10,6 +11,8 @@ use Illuminate\Http\Response;
 
 class ProductController extends Controller
 {
+    use WithCSVImport;
+
     public function index()
     {
         abort_if(Gate::denies('product_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -35,7 +38,7 @@ class ProductController extends Controller
     {
         abort_if(Gate::denies('product_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $product->load('business', 'category');
+        $product->load('category', 'tag', 'bisiness');
 
         return view('admin.product.show', compact('product'));
     }
@@ -66,5 +69,10 @@ class ProductController extends Controller
         $media->wasRecentlyCreated = true;
 
         return response()->json(compact('media'), Response::HTTP_CREATED);
+    }
+
+    public function __construct()
+    {
+        $this->csvImportModel = Product::class;
     }
 }

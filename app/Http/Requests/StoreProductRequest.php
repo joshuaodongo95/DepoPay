@@ -33,18 +33,27 @@ class StoreProductRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'unit_price' => [
+            'price' => [
                 'numeric',
                 'required',
             ],
-            'business_id' => [
+            'category' => [
+                'array',
+            ],
+            'category.*.id' => [
+                'integer',
+                'exists:product_categories,id',
+            ],
+            'tag' => [
+                'array',
+            ],
+            'tag.*.id' => [
+                'integer',
+                'exists:product_tags,id',
+            ],
+            'bisiness_id' => [
                 'integer',
                 'exists:businesses,id',
-                'required',
-            ],
-            'category_id' => [
-                'integer',
-                'exists:categories,id',
                 'required',
             ],
         ];

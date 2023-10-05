@@ -21,7 +21,9 @@
             @endif
 
 
-
+            @can('product_create')
+                <x-csv-import route="{{ route('admin.products.csv.store') }}" />
+            @endcan
 
         </div>
         <div class="w-full sm:w-1/2 sm:text-right">
@@ -53,39 +55,41 @@
                             @include('components.table.sort', ['field' => 'description'])
                         </th>
                         <th>
-                            {{ trans('cruds.product.fields.picture') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.product.fields.unit_price') }}
-                            @include('components.table.sort', ['field' => 'unit_price'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.product.fields.business') }}
-                            @include('components.table.sort', ['field' => 'business.name'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.business.fields.registration_number') }}
-                            @include('components.table.sort', ['field' => 'business.registration_number'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.business.fields.address') }}
-                            @include('components.table.sort', ['field' => 'business.address'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.business.fields.phone') }}
-                            @include('components.table.sort', ['field' => 'business.phone'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.business.fields.email') }}
-                            @include('components.table.sort', ['field' => 'business.email'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.business.fields.website') }}
-                            @include('components.table.sort', ['field' => 'business.website'])
+                            {{ trans('cruds.product.fields.price') }}
+                            @include('components.table.sort', ['field' => 'price'])
                         </th>
                         <th>
                             {{ trans('cruds.product.fields.category') }}
-                            @include('components.table.sort', ['field' => 'category.name'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.product.fields.tag') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.product.fields.photo') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.product.fields.bisiness') }}
+                            @include('components.table.sort', ['field' => 'bisiness.name'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.business.fields.registration_number') }}
+                            @include('components.table.sort', ['field' => 'bisiness.registration_number'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.business.fields.address') }}
+                            @include('components.table.sort', ['field' => 'bisiness.address'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.business.fields.phone') }}
+                            @include('components.table.sort', ['field' => 'bisiness.phone'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.business.fields.email') }}
+                            @include('components.table.sort', ['field' => 'bisiness.email'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.business.fields.website') }}
+                            @include('components.table.sort', ['field' => 'bisiness.website'])
                         </th>
                         <th>
                         </th>
@@ -107,52 +111,57 @@
                                 {{ $product->description }}
                             </td>
                             <td>
-                                @foreach($product->picture as $key => $entry)
+                                {{ $product->price }}
+                            </td>
+                            <td>
+                                @foreach($product->category as $key => $entry)
+                                    <span class="badge badge-relationship">{{ $entry->name }}</span>
+                                @endforeach
+                            </td>
+                            <td>
+                                @foreach($product->tag as $key => $entry)
+                                    <span class="badge badge-relationship">{{ $entry->name }}</span>
+                                @endforeach
+                            </td>
+                            <td>
+                                @foreach($product->photo as $key => $entry)
                                     <a class="link-photo" href="{{ $entry['url'] }}">
                                         <img src="{{ $entry['thumbnail'] }}" alt="{{ $entry['name'] }}" title="{{ $entry['name'] }}">
                                     </a>
                                 @endforeach
                             </td>
                             <td>
-                                {{ $product->unit_price }}
-                            </td>
-                            <td>
-                                @if($product->business)
-                                    <span class="badge badge-relationship">{{ $product->business->name ?? '' }}</span>
+                                @if($product->bisiness)
+                                    <span class="badge badge-relationship">{{ $product->bisiness->name ?? '' }}</span>
                                 @endif
                             </td>
                             <td>
-                                @if($product->business)
-                                    {{ $product->business->registration_number ?? '' }}
+                                @if($product->bisiness)
+                                    {{ $product->bisiness->registration_number ?? '' }}
                                 @endif
                             </td>
                             <td>
-                                @if($product->business)
-                                    {{ $product->business->address ?? '' }}
+                                @if($product->bisiness)
+                                    {{ $product->bisiness->address ?? '' }}
                                 @endif
                             </td>
                             <td>
-                                @if($product->business)
-                                    {{ $product->business->phone ?? '' }}
+                                @if($product->bisiness)
+                                    {{ $product->bisiness->phone ?? '' }}
                                 @endif
                             </td>
                             <td>
-                                @if($product->business)
-                                    <a class="link-light-blue" href="mailto:{{ $product->business->email ?? '' }}">
+                                @if($product->bisiness)
+                                    <a class="link-light-blue" href="mailto:{{ $product->bisiness->email ?? '' }}">
                                         <i class="far fa-envelope fa-fw">
                                         </i>
-                                        {{ $product->business->email ?? '' }}
+                                        {{ $product->bisiness->email ?? '' }}
                                     </a>
                                 @endif
                             </td>
                             <td>
-                                @if($product->business)
-                                    {{ $product->business->website ?? '' }}
-                                @endif
-                            </td>
-                            <td>
-                                @if($product->category)
-                                    <span class="badge badge-relationship">{{ $product->category->name ?? '' }}</span>
+                                @if($product->bisiness)
+                                    {{ $product->bisiness->website ?? '' }}
                                 @endif
                             </td>
                             <td>

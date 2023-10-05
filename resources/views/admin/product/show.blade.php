@@ -43,10 +43,38 @@
                         </tr>
                         <tr>
                             <th>
-                                {{ trans('cruds.product.fields.picture') }}
+                                {{ trans('cruds.product.fields.price') }}
                             </th>
                             <td>
-                                @foreach($product->picture as $key => $entry)
+                                {{ $product->price }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.product.fields.category') }}
+                            </th>
+                            <td>
+                                @foreach($product->category as $key => $entry)
+                                    <span class="badge badge-relationship">{{ $entry->name }}</span>
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.product.fields.tag') }}
+                            </th>
+                            <td>
+                                @foreach($product->tag as $key => $entry)
+                                    <span class="badge badge-relationship">{{ $entry->name }}</span>
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.product.fields.photo') }}
+                            </th>
+                            <td>
+                                @foreach($product->photo as $key => $entry)
                                     <a class="link-photo" href="{{ $entry['url'] }}">
                                         <img src="{{ $entry['preview_thumbnail'] }}" alt="{{ $entry['name'] }}" title="{{ $entry['name'] }}">
                                     </a>
@@ -55,29 +83,11 @@
                         </tr>
                         <tr>
                             <th>
-                                {{ trans('cruds.product.fields.unit_price') }}
+                                {{ trans('cruds.product.fields.bisiness') }}
                             </th>
                             <td>
-                                {{ $product->unit_price }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                {{ trans('cruds.product.fields.business') }}
-                            </th>
-                            <td>
-                                @if($product->business)
-                                    <span class="badge badge-relationship">{{ $product->business->name ?? '' }}</span>
-                                @endif
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                {{ trans('cruds.product.fields.category') }}
-                            </th>
-                            <td>
-                                @if($product->category)
-                                    <span class="badge badge-relationship">{{ $product->category->name ?? '' }}</span>
+                                @if($product->bisiness)
+                                    <span class="badge badge-relationship">{{ $product->bisiness->name ?? '' }}</span>
                                 @endif
                             </td>
                         </tr>

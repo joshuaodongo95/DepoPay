@@ -21,7 +21,9 @@
             @endif
 
 
-
+            @can('wallet_create')
+                <x-csv-import route="{{ route('admin.wallets.csv.store') }}" />
+            @endcan
 
         </div>
         <div class="w-full sm:w-1/2 sm:text-right">
@@ -53,6 +55,30 @@
                             @include('components.table.sort', ['field' => 'msisdn'])
                         </th>
                         <th>
+                            {{ trans('cruds.wallet.fields.business') }}
+                            @include('components.table.sort', ['field' => 'business.name'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.business.fields.registration_number') }}
+                            @include('components.table.sort', ['field' => 'business.registration_number'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.business.fields.address') }}
+                            @include('components.table.sort', ['field' => 'business.address'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.business.fields.phone') }}
+                            @include('components.table.sort', ['field' => 'business.phone'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.business.fields.email') }}
+                            @include('components.table.sort', ['field' => 'business.email'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.business.fields.website') }}
+                            @include('components.table.sort', ['field' => 'business.website'])
+                        </th>
+                        <th>
                         </th>
                     </tr>
                 </thead>
@@ -70,6 +96,40 @@
                             </td>
                             <td>
                                 {{ $wallet->msisdn }}
+                            </td>
+                            <td>
+                                @if($wallet->business)
+                                    <span class="badge badge-relationship">{{ $wallet->business->name ?? '' }}</span>
+                                @endif
+                            </td>
+                            <td>
+                                @if($wallet->business)
+                                    {{ $wallet->business->registration_number ?? '' }}
+                                @endif
+                            </td>
+                            <td>
+                                @if($wallet->business)
+                                    {{ $wallet->business->address ?? '' }}
+                                @endif
+                            </td>
+                            <td>
+                                @if($wallet->business)
+                                    {{ $wallet->business->phone ?? '' }}
+                                @endif
+                            </td>
+                            <td>
+                                @if($wallet->business)
+                                    <a class="link-light-blue" href="mailto:{{ $wallet->business->email ?? '' }}">
+                                        <i class="far fa-envelope fa-fw">
+                                        </i>
+                                        {{ $wallet->business->email ?? '' }}
+                                    </a>
+                                @endif
+                            </td>
+                            <td>
+                                @if($wallet->business)
+                                    {{ $wallet->business->website ?? '' }}
+                                @endif
                             </td>
                             <td>
                                 <div class="flex justify-end">

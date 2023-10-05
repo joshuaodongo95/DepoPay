@@ -37,19 +37,14 @@ class Edit extends Component
     protected function rules(): array
     {
         return [
-            'subscription.ref' => [
-                'string',
-                'nullable',
-            ],
             'subscription.customer_id' => [
                 'integer',
                 'exists:users,id',
                 'nullable',
             ],
-            'subscription.product_id' => [
-                'integer',
-                'exists:products,id',
-                'required',
+            'subscription.ref' => [
+                'string',
+                'nullable',
             ],
             'subscription.payment_plan_id' => [
                 'integer',
@@ -61,8 +56,13 @@ class Edit extends Component
                 'in:' . implode(',', array_keys($this->listsForFields['status'])),
             ],
             'subscription.currency' => [
-                'numeric',
+                'string',
                 'nullable',
+            ],
+            'subscription.product_id' => [
+                'integer',
+                'exists:products,id',
+                'required',
             ],
         ];
     }
@@ -70,8 +70,8 @@ class Edit extends Component
     protected function initListsForFields(): void
     {
         $this->listsForFields['customer']     = User::pluck('name', 'id')->toArray();
-        $this->listsForFields['product']      = Product::pluck('name', 'id')->toArray();
         $this->listsForFields['payment_plan'] = PaymentPlan::pluck('name', 'id')->toArray();
         $this->listsForFields['status']       = $this->subscription::STATUS_SELECT;
+        $this->listsForFields['product']      = Product::pluck('name', 'id')->toArray();
     }
 }
