@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Models\Subscription;
 use App\Models\User;
 use Livewire\Component;
+use Bmatovu\MtnMomo\Exceptions\CollectionRequestException;
+use Bmatovu\MtnMomo\Products\Collection;
 
 class Create extends Component
 {
@@ -30,8 +32,24 @@ class Create extends Component
         $this->validate();
 
         $this->subscription->save();
-
+        // dd($this->subscription->id);
+        if($this->subscription){
+            
+            try {
+                $collection = new Collection();
+                $collection->requestToPay($this->subscription->id, '46733123453', 100);
+                // dd($referenceId);
+                return redirect()->route('admin.subscriptions.index');
+            } catch(CollectionRequestException $e) {
+                do {
+                    printf("\n\r%s:%d %s (%d) [%s]\n\r", 
+                    $e->getFile(), $e->getLine(), $e->getMessage(), $e->getCode(), get_class($e));
+                } while($e = $e->getPrevious());
+            }
+            
+        }
         return redirect()->route('admin.subscriptions.index');
+
     }
 
     protected function rules(): array
