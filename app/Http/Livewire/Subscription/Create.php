@@ -32,24 +32,39 @@ class Create extends Component
         $this->validate();
 
         $this->subscription->save();
-        // dd($this->subscription->id);
-        if($this->subscription){
-            
+        
+        if ($this->subscription) {
             try {
-                $collection = new Collection();
-                $collection->requestToPay($this->subscription->id, '46733123453', 100);
-                // dd($referenceId);
-                return redirect()->route('admin.subscriptions.index');
-            } catch(CollectionRequestException $e) {
-                do {
-                    printf("\n\r%s:%d %s (%d) [%s]\n\r", 
-                    $e->getFile(), $e->getLine(), $e->getMessage(), $e->getCode(), get_class($e));
-                } while($e = $e->getPrevious());
+                $referenceId = $this->handlePayment();
+                $this->subscription->ref = $referenceId;
+                $this->subscription->save();
+            } catch (CollectionRequestException $e) {
+                $this->handlePaymentException($e);
             }
-            
         }
+        
         return redirect()->route('admin.subscriptions.index');
+    }
 
+    private function handlePayment()
+    {
+        $collection = new Collection();
+        // Request payment and return the referenceId
+        return $collection->requestToPay($this->subscription->id, '46733123453', 100,'MoMO TEST','Pay in Cash');
+    }
+
+    private function handlePaymentException(CollectionRequestException $e)
+    {
+        do {
+            printf(
+                "\n\r%s:%d %s (%d) [%s]\n\r",
+                $e->getFile(),
+                $e->getLine(),
+                $e->getMessage(),
+                $e->getCode(),
+                get_class($e)
+            );
+        } while ($e = $e->getPrevious());
     }
 
     protected function rules(): array

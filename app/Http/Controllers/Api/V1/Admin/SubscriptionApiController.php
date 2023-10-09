@@ -27,21 +27,22 @@ class SubscriptionApiController extends Controller
     {
         $subscription = Subscription::create($request->validated());
         // Create subscription to momo here after saving subscription
-        // if($subscription){
-            
-        //     try {
-        //         $collection = new Collection();
+        if($subscription){            
+            try {
+                $collection = new Collection();
                 
-        //         $referenceId = $collection->requestToPay($subscription->id, '46733123450', 100);
-        //         dd($referenceId);
-        //     } catch(CollectionRequestException $e) {
-        //         do {
-        //             printf("\n\r%s:%d %s (%d) [%s]\n\r", 
-        //             $e->getFile(), $e->getLine(), $e->getMessage(), $e->getCode(), get_class($e));
-        //         } while($e = $e->getPrevious());
-        //     }
+                $referenceId = $collection->requestToPay($subscription->id, '46733123450', 100);
+                $subscription->ref = $referenceId;
+                $subscription->save();
+            } catch(CollectionRequestException $e) {
+                do {
+                    printf("\n\r%s:%d %s (%d) [%s]\n\r", 
+                    $e->getFile(), $e->getLine(), $e->getMessage(), $e->getCode(), get_class($e));
+                } while($e = $e->getPrevious());
+            }
             
-        // }
+        }
+
         return (new SubscriptionResource($subscription))
             ->response()
             ->setStatusCode(Response::HTTP_CREATED);
