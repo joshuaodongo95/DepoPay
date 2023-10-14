@@ -1,62 +1,102 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+### DepoPay
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+#### Problem Statement
 
-## About Laravel
+Many individuals/organizations desire to acquire quality items for their day to day activities yet have less money at hand to pay in a lump sum amount and therefore opt for the cheaper less quality options in the market.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#### Objective
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+DepoPay seeks to provide individuals/organizations with a platform where they can deposit money to purchase goods at 3 or 4 partial payment installments from known suppliers.
+Overview
+The admin lists supplier items eligible for partial payment arrangements on the platform
+The clients browse through the list of available items to make a subscribe order.
+To make a Subscribe order & Save subscription:
+• Client finds a subscribe eligible item.
+• Client selects preferred quantity
+• Client selects the Subscribe & Save option and selects Subscribe Now.
+• Client reviews order details.
+• Client selects available payment plan for their subscription order
+• Client confirms subscription order.
+The client keeps depositing money on the suppliers’ wallet to complete the order payment
+The order will be delivered after completion of the payments. The client will be unsubscribed from item after delivery of item.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Features
 
-## Learning Laravel
+1. User registration, authentication and authorization:
+   Allow users to register using their mobile numbers and passwords.
+   Allow admin to add suppliers
+   Implement authentication and authorization to secure user accounts.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. Inventory:
+   Allow admin to manage products, listings, categories and prices
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. Balance Check:
+   Fetch and display users account balance
 
-## Laravel Sponsors
+4. Deposit Money:
+   Allow users to deposit money on supplier’s wallet using generated QR code or payment link
+5. Receive Money:
+   Enable supplier to initiate payment or generate a QR code or a payment link for to receive deposit money from client
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+6. Transaction History:
+   List of recent transactions
+   Details like transaction type, date, and amount, balance due
 
-### Premium Partners
+#### Implementation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+1. MoMo API integration:
+   Implementation of API calls for balance check, deposit money, receive money, and transaction history.
+   Handle API responses and errors
 
-## Contributing
+2. Notifications:
+   Send push notifications for successful transactions and other important updates.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. Security:
+   Implementation of secure token-based authentication for API requests.
+   Encryption of sensitive user data stored in the app.
 
-## Code of Conduct
+4. User authentication:
+   Implementation of user registration and login functionality
+   Use of token based authentication for API requests
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. QR Code generation:
+   Integration of a QR code generator library to create QR codes for receiving money.
 
-## Security Vulnerabilities
+6. Error handling:
+   Provide meaningful error messages for failed transactions or API errors.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7. Testing:
+   App testing on different devices and scenarios.
+   Debugging and fixing of any issues.
 
-## License
+8. Web/mobile user interfaces:
+   These will enable users to browse through to find eligible items to subscribe for partial payment plan.
+   Admin to manage the vendors/manufacturers, users and products listings.
+   Supplier to manage account profile and product subscriptions.
+   User to manage account profile and subscriptions.
+   React framework will be used for web frontend.
+   Flutter for mobile clients.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+9. Data storage:
+   Data storage will be implemented with MySQL or PostgreSQL
+
+10. Backend API:
+    PHP Laravel framework or NodeJs will be used for handling data logic and API endpoints.
+
+11. Version Control:
+    Git and GitHub for version control
+
+#### Applications
+
+-   Purchase of personal accessories e.g. phones, laptops,
+-   Purchase of household items e.g. TV’s, Sound
+-   Purchase of company equipment e.g. cars, computers
+
+#### Revenue
+
+-   Transaction fees
+-   Sales commissions
+
+
+#### Installation
+

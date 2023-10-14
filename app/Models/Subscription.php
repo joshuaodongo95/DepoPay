@@ -34,7 +34,7 @@ class Subscription extends Model
     public const STATUS_SELECT = [
         'new'       => 'new',
         'canceled'  => 'canceled',
-        'delivered' => 'canceled',
+        'delivered' => 'delivered',
         'pending'   => 'pending',
     ];
 
