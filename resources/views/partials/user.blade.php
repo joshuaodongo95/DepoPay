@@ -159,13 +159,14 @@
                 <div class="header-alert-news">
                     <p>
                         <b>Free Shipping</b>
-                        This Week Order Over - $55
+                        This Week Order Over - Ugx 55
                     </p>
                 </div>
 
                 <div class="header-top-actions">
 
                     <select name="currency">
+
                         <option value="ugx"> Ugx </option>
                         <option value="ksh"> Ksh </option>
 
@@ -209,7 +210,7 @@
                     @if (Route::has('login'))
                         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
-                                <a class="action-btn" href="{{ route('/home') }}">
+                                <a class="action-btn" href="">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </a>
                             @else
@@ -221,10 +222,15 @@
                         </div>
                     @endif
 
+                    <a class="action-btn" href="#"
+                        onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                        <ion-icon name="log-in-outline"></ion-icon>
+                    </a>
                     <button class="action-btn">
                         <ion-icon name="heart-outline"></ion-icon>
                         <span class="count">0</span>
                     </button>
+
 
                     <button class="action-btn">
                         <ion-icon name="bag-handle-outline"></ion-icon>
@@ -703,21 +709,11 @@
                             <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
                         </button>
 
-                        <ul class="submenu-category-list" data-accordion>
-
-                            <li class="submenu-category">
-                                <a href="#" class="submenu-title">English</a>
-                            </li>
-
-                            <li class="submenu-category">
-                                <a href="#" class="submenu-title">Espa&ntilde;ol</a>
-                            </li>
-
-                            <li class="submenu-category">
-                                <a href="#" class="submenu-title">Fren&ccedil;h</a>
-                            </li>
-
-                        </ul>
+                        @if (file_exists(app_path('Http/Livewire/LanguageSwitcher.php')))
+                            <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+                                <livewire:language-switcher />
+                            </ul>
+                        @endif
 
                     </li>
 
@@ -3661,6 +3657,9 @@
         </div>
 
     </footer>
+    <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 
 
     <!--

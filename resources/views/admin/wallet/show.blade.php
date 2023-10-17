@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-<div class="row">
     <div class="card bg-blueGray-100">
         <div class="card-header">
             <div class="card-header-container">
@@ -46,7 +45,7 @@
                                 {{ trans('cruds.wallet.fields.business') }}
                             </th>
                             <td>
-                                @if($wallet->business)
+                                @if ($wallet->business)
                                     <span class="badge badge-relationship">{{ $wallet->business->name ?? '' }}</span>
                                 @endif
                             </td>
@@ -66,5 +65,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

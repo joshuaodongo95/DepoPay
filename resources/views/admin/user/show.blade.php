@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-<div class="row">
     <div class="card bg-blueGray-100">
         <div class="card-header">
             <div class="card-header-container">
@@ -58,7 +57,7 @@
                                 {{ trans('cruds.user.fields.roles') }}
                             </th>
                             <td>
-                                @foreach($user->roles as $key => $entry)
+                                @foreach ($user->roles as $key => $entry)
                                     <span class="badge badge-relationship">{{ $entry->title }}</span>
                                 @endforeach
                             </td>
@@ -86,5 +85,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

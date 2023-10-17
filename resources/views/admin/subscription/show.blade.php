@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-<div class="row">
     <div class="card bg-blueGray-100">
         <div class="card-header">
             <div class="card-header-container">
@@ -30,7 +29,7 @@
                                 {{ trans('cruds.subscription.fields.customer') }}
                             </th>
                             <td>
-                                @if($subscription->customer)
+                                @if ($subscription->customer)
                                     <span class="badge badge-relationship">{{ $subscription->customer->name ?? '' }}</span>
                                 @endif
                             </td>
@@ -48,8 +47,9 @@
                                 {{ trans('cruds.subscription.fields.payment_plan') }}
                             </th>
                             <td>
-                                @if($subscription->paymentPlan)
-                                    <span class="badge badge-relationship">{{ $subscription->paymentPlan->name ?? '' }}</span>
+                                @if ($subscription->paymentPlan)
+                                    <span
+                                        class="badge badge-relationship">{{ $subscription->paymentPlan->name ?? '' }}</span>
                                 @endif
                             </td>
                         </tr>
@@ -74,7 +74,7 @@
                                 {{ trans('cruds.subscription.fields.product') }}
                             </th>
                             <td>
-                                @if($subscription->product)
+                                @if ($subscription->product)
                                     <span class="badge badge-relationship">{{ $subscription->product->name ?? '' }}</span>
                                 @endif
                             </td>
@@ -94,5 +94,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection
