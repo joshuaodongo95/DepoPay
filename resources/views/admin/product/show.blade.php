@@ -12,10 +12,10 @@
             </div>
         </div>
 
-        <div class="card-body">
+        <div class="card-body w-12">
             <div class="pt-3">
                 <table class="table table-view">
-                    <tbody class="bg-white">
+                    <tbody class="bg-white w-12">
                         <tr>
                             <th>
                                 {{ trans('cruds.product.fields.id') }}
@@ -87,6 +87,7 @@
                             </th>
                             <td>
                                 @if ($product->bisiness)
+                                    {!! QrCode::size(300)->backgroundColor(173, 216, 230)->generate('http://127.0.0.1:8000/admin/products/' . $product->bisiness->id) !!}
                                     <span class="badge badge-relationship">{{ $product->bisiness->name ?? '' }}</span>
                                 @endif
                             </td>
