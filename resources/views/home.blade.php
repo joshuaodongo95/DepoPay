@@ -209,7 +209,7 @@
                     @if (Route::has('login'))
                         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
-                                <a class="action-btn" href="{{ route('profile.show') }}">
+                                <a class="action-btn" href="{{ route('admin.user') }}">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </a>
                             @else

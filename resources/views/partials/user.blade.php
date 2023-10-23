@@ -210,7 +210,10 @@
                     @if (Route::has('login'))
                         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
-                                <a class="action-btn" href="{{ route('profile.show') }}">
+                                {{-- <a class="action-btn" href="{{ route('profile.show') }}">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                </a> --}}
+                                <a class="action-btn" href="{{ route('admin.user') }}">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </a>
                             @else
@@ -234,8 +237,12 @@
 
                     <button class="action-btn">
                         <ion-icon name="bag-handle-outline"></ion-icon>
-                        <span class="count">0</span>
+                        <span class="count total-count">0</span>
                     </button>
+                    {{-- <button type="button" class="btn btn-success my-2 my-sm-0" data-toggle="modal"
+                        data-target="#staticBackdrop">
+                        <i class="fas fa-shopping-cart total-count"></i>
+                    </button> --}}
 
                 </div>
 
@@ -2265,7 +2272,10 @@
                                             <del>Ugx 200.00</del>
                                         </div>
 
-                                        <button class="add-cart-btn">add to cart</button>
+                                        {{-- <button type="button" data-name="Short-Sleeve" data-price="800"
+                                            class="add-cart-btn border-radius-5">Add to cart</button> --}}
+                                        <button type="button" data-name="Oxford" data-price="1200"
+                                            class="default-btn add-cart-btn border-radius-5"> Add to cart</button>
 
                                         <div class="showcase-status">
                                             <div class="wrapper">
@@ -3666,7 +3676,7 @@
     - custom js link
   -->
     <script src="{{ asset('assets/js/script.js') }}"></script>
-
+    <script src="{{ asset('assets/js/cart.js') }}"></script>
     <!--
     - ionicon link
   -->
