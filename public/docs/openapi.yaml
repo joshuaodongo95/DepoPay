@@ -47,26 +47,26 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: vero
+                  example: quisquam
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: emard.gaylord@example.net
+                  example: maegan53@example.com
                 password:
                   type: string
                   description: ''
-                  example: 'KY&Xh/nZ&k'
+                  example: '.~US''@4Q-~QQ{I'
                 roles:
                   type: array
                   description: ''
                   example:
-                    - sit
+                    - et
                   items:
                     type: integer
                 locale:
                   type: string
                   description: ''
-                  example: mn_CN
+                  example: de_DE
               required:
                 - name
                 - email
@@ -153,27 +153,27 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: similique
+                  example: est
                 registration_number:
                   type: string
                   description: ''
-                  example: rerum
+                  example: quisquam
                 address:
                   type: string
                   description: ''
-                  example: quasi
+                  example: quo
                 phone:
                   type: string
                   description: ''
-                  example: vel
+                  example: dolores
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: mina.nicolas@example.org
+                  example: monique.bogisich@example.net
                 website:
                   type: string
                   description: ''
-                  example: consectetur
+                  example: est
               required:
                 - registration_number
                 - phone
@@ -258,11 +258,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: nesciunt
+                  example: aliquam
                 msisdn:
                   type: string
                   description: ''
-                  example: dolorem
+                  example: sunt
                 business_id:
                   type: integer
                   description: ''
@@ -310,15 +310,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: aperiam
+                  example: sunt
                 msisdn:
                   type: string
                   description: ''
-                  example: repudiandae
+                  example: tempore
                 business_id:
                   type: integer
                   description: ''
-                  example: 9
+                  example: 1
               required:
                 - msisdn
       security: []
@@ -380,7 +380,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: optio
+                  example: totam
                 duration:
                   type: string
                   description: ''
@@ -433,11 +433,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: aut
+                  example: id
                 duration:
                   type: string
                   description: ''
-                  example: weekly
+                  example: quarterly
                   enum:
                     - weekly
                     - biweekly
@@ -504,15 +504,15 @@ paths:
                 ref:
                   type: string
                   description: ''
-                  example: magni
+                  example: impedit
                 customer_id:
                   type: integer
                   description: ''
-                  example: 20
+                  example: 9
                 payment_plan_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 19
                 status:
                   type: string
                   description: ''
@@ -525,11 +525,11 @@ paths:
                 product_id:
                   type: integer
                   description: ''
-                  example: 9
+                  example: 3
                 currency:
                   type: string
                   description: ''
-                  example: ut
+                  example: non
               required:
                 - payment_plan_id
                 - product_id
@@ -574,19 +574,19 @@ paths:
                 ref:
                   type: string
                   description: ''
-                  example: corrupti
+                  example: non
                 customer_id:
                   type: integer
                   description: ''
-                  example: 17
+                  example: 11
                 payment_plan_id:
                   type: integer
                   description: ''
-                  example: 19
+                  example: 13
                 status:
                   type: string
                   description: ''
-                  example: delivered
+                  example: new
                   enum:
                     - new
                     - canceled
@@ -599,7 +599,7 @@ paths:
                 currency:
                   type: string
                   description: ''
-                  example: aut
+                  example: quasi
               required:
                 - payment_plan_id
                 - product_id
@@ -672,11 +672,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: qui
+                  example: maiores
                 description:
                   type: string
                   description: ''
-                  example: 'Omnis ab non et tempora sit dignissimos.'
+                  example: 'Sed quisquam esse beatae aut aperiam voluptas sequi.'
               required:
                 - name
                 - description
@@ -721,11 +721,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: sint
+                  example: illo
                 description:
                   type: string
                   description: ''
-                  example: 'Sed ipsum velit hic repellat similique.'
+                  example: 'Aspernatur architecto voluptatem optio praesentium natus debitis molestiae.'
               required:
                 - name
                 - description
@@ -788,7 +788,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: voluptatem
+                  example: beatae
               required:
                 - name
       security: []
@@ -832,7 +832,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: ducimus
+                  example: explicabo
               required:
                 - name
       security: []
@@ -904,33 +904,33 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: sit
+                  example: non
                 description:
                   type: string
                   description: ''
-                  example: 'Et porro ullam corporis sint quia.'
+                  example: 'Omnis est qui facere est a architecto est vero.'
                 price:
                   type: number
                   description: ''
-                  example: 45.6
+                  example: 815566.5406
                 category:
                   type: array
                   description: ''
                   example:
-                    - voluptas
+                    - earum
                   items:
                     type: integer
                 tag:
                   type: array
                   description: ''
                   example:
-                    - odit
+                    - dignissimos
                   items:
                     type: integer
                 bisiness_id:
                   type: integer
                   description: ''
-                  example: 8
+                  example: 19
               required:
                 - name
                 - price
@@ -976,27 +976,27 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: ex
+                  example: rerum
                 description:
                   type: string
                   description: ''
-                  example: 'Veniam eveniet aliquam quo.'
+                  example: 'Quia quia dolores dolorem excepturi molestias aut.'
                 price:
                   type: number
                   description: ''
-                  example: 1.13
+                  example: 2.0
                 category:
                   type: array
                   description: ''
                   example:
-                    - aut
+                    - aperiam
                   items:
                     type: integer
                 tag:
                   type: array
                   description: ''
                   example:
-                    - aspernatur
+                    - odio
                   items:
                     type: integer
                 bisiness_id:
@@ -1026,6 +1026,16 @@ paths:
         required: true
         schema:
           type: integer
+  /api/v1/tokens/create:
+    post:
+      summary: ''
+      operationId: postApiV1TokensCreate
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
 tags:
   -
     name: Endpoints

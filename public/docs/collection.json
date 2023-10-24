@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "d6469429-eaeb-41e8-a453-1b52bd95411d",
+        "_postman_id": "c0dbe274-ea27-4b20-a52a-b86dac8a525f",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -89,7 +89,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"vero\",\"email\":\"emard.gaylord@example.net\",\"password\":\"KY&Xh\\\/nZ&k\",\"roles\":[\"sit\"],\"locale\":\"mn_CN\"}"
+                            "raw": "{\"name\":\"quisquam\",\"email\":\"maegan53@example.com\",\"password\":\".~US'@4Q-~QQ{I\",\"roles\":[\"et\"],\"locale\":\"de_DE\"}"
                         },
                         "description": "",
                         "auth": {
@@ -260,7 +260,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"similique\",\"registration_number\":\"rerum\",\"address\":\"quasi\",\"phone\":\"vel\",\"email\":\"mina.nicolas@example.org\",\"website\":\"consectetur\"}"
+                            "raw": "{\"name\":\"est\",\"registration_number\":\"quisquam\",\"address\":\"quo\",\"phone\":\"dolores\",\"email\":\"monique.bogisich@example.net\",\"website\":\"est\"}"
                         },
                         "description": "",
                         "auth": {
@@ -431,7 +431,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"nesciunt\",\"msisdn\":\"dolorem\",\"business_id\":8}"
+                            "raw": "{\"name\":\"aliquam\",\"msisdn\":\"sunt\",\"business_id\":8}"
                         },
                         "description": "",
                         "auth": {
@@ -526,7 +526,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"aperiam\",\"msisdn\":\"repudiandae\",\"business_id\":9}"
+                            "raw": "{\"name\":\"sunt\",\"msisdn\":\"tempore\",\"business_id\":1}"
                         },
                         "description": "",
                         "auth": {
@@ -641,7 +641,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"optio\",\"duration\":\"monthly\"}"
+                            "raw": "{\"name\":\"totam\",\"duration\":\"monthly\"}"
                         },
                         "description": "",
                         "auth": {
@@ -736,7 +736,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"aut\",\"duration\":\"weekly\"}"
+                            "raw": "{\"name\":\"id\",\"duration\":\"quarterly\"}"
                         },
                         "description": "",
                         "auth": {
@@ -851,7 +851,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"ref\":\"magni\",\"customer_id\":20,\"payment_plan_id\":10,\"status\":\"pending\",\"product_id\":9,\"currency\":\"ut\"}"
+                            "raw": "{\"ref\":\"impedit\",\"customer_id\":9,\"payment_plan_id\":19,\"status\":\"pending\",\"product_id\":3,\"currency\":\"non\"}"
                         },
                         "description": "",
                         "auth": {
@@ -946,7 +946,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"ref\":\"corrupti\",\"customer_id\":17,\"payment_plan_id\":19,\"status\":\"delivered\",\"product_id\":6,\"currency\":\"aut\"}"
+                            "raw": "{\"ref\":\"non\",\"customer_id\":11,\"payment_plan_id\":13,\"status\":\"new\",\"product_id\":6,\"currency\":\"quasi\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1089,7 +1089,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"qui\",\"description\":\"Omnis ab non et tempora sit dignissimos.\"}"
+                            "raw": "{\"name\":\"maiores\",\"description\":\"Sed quisquam esse beatae aut aperiam voluptas sequi.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1184,7 +1184,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sint\",\"description\":\"Sed ipsum velit hic repellat similique.\"}"
+                            "raw": "{\"name\":\"illo\",\"description\":\"Aspernatur architecto voluptatem optio praesentium natus debitis molestiae.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1299,7 +1299,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"voluptatem\"}"
+                            "raw": "{\"name\":\"beatae\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1394,7 +1394,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ducimus\"}"
+                            "raw": "{\"name\":\"explicabo\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1537,7 +1537,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sit\",\"description\":\"Et porro ullam corporis sint quia.\",\"price\":45.6,\"category\":[\"voluptas\"],\"tag\":[\"odit\"],\"bisiness_id\":8}"
+                            "raw": "{\"name\":\"non\",\"description\":\"Omnis est qui facere est a architecto est vero.\",\"price\":815566.5406,\"category\":[\"earum\"],\"tag\":[\"dignissimos\"],\"bisiness_id\":19}"
                         },
                         "description": "",
                         "auth": {
@@ -1632,7 +1632,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ex\",\"description\":\"Veniam eveniet aliquam quo.\",\"price\":1.13,\"category\":[\"aut\"],\"tag\":[\"aspernatur\"],\"bisiness_id\":19}"
+                            "raw": "{\"name\":\"rerum\",\"description\":\"Quia quia dolores dolorem excepturi molestias aut.\",\"price\":2,\"category\":[\"aperiam\"],\"tag\":[\"odio\"],\"bisiness_id\":19}"
                         },
                         "description": "",
                         "auth": {
@@ -1659,6 +1659,34 @@
                             ]
                         },
                         "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/v1\/tokens\/create",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/tokens\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/tokens\/create"
+                        },
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
