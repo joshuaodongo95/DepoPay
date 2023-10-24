@@ -272,6 +272,7 @@ INTRO
         'bash',
         'python',
         'javascript',
+        'php',
     ],
 
     /*

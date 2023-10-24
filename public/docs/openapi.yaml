@@ -47,26 +47,26 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: tempore
+                  example: vero
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: wava41@example.org
+                  example: emard.gaylord@example.net
                 password:
                   type: string
                   description: ''
-                  example: 'm}m`c%3X}M*'
+                  example: 'KY&Xh/nZ&k'
                 roles:
                   type: array
                   description: ''
                   example:
-                    - incidunt
+                    - sit
                   items:
                     type: integer
                 locale:
                   type: string
                   description: ''
-                  example: ar_SD
+                  example: mn_CN
               required:
                 - name
                 - email
@@ -153,7 +153,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: id
+                  example: similique
                 registration_number:
                   type: string
                   description: ''
@@ -161,19 +161,19 @@ paths:
                 address:
                   type: string
                   description: ''
-                  example: aspernatur
+                  example: quasi
                 phone:
                   type: string
                   description: ''
-                  example: impedit
+                  example: vel
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: lavern.jast@example.com
+                  example: mina.nicolas@example.org
                 website:
                   type: string
                   description: ''
-                  example: occaecati
+                  example: consectetur
               required:
                 - registration_number
                 - phone
@@ -258,15 +258,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: odio
+                  example: nesciunt
                 msisdn:
                   type: string
                   description: ''
-                  example: molestiae
+                  example: dolorem
                 business_id:
                   type: integer
                   description: ''
-                  example: 15
+                  example: 8
               required:
                 - msisdn
       security: []
@@ -314,11 +314,11 @@ paths:
                 msisdn:
                   type: string
                   description: ''
-                  example: dolorum
+                  example: repudiandae
                 business_id:
                   type: integer
                   description: ''
-                  example: 10
+                  example: 9
               required:
                 - msisdn
       security: []
@@ -380,11 +380,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: ut
+                  example: optio
                 duration:
                   type: string
                   description: ''
-                  example: biweekly
+                  example: monthly
                   enum:
                     - weekly
                     - biweekly
@@ -433,7 +433,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: doloremque
+                  example: aut
                 duration:
                   type: string
                   description: ''
@@ -504,19 +504,19 @@ paths:
                 ref:
                   type: string
                   description: ''
-                  example: ducimus
+                  example: magni
                 customer_id:
                   type: integer
                   description: ''
-                  example: 6
+                  example: 20
                 payment_plan_id:
                   type: integer
                   description: ''
-                  example: 8
+                  example: 10
                 status:
                   type: string
                   description: ''
-                  example: delivered
+                  example: pending
                   enum:
                     - new
                     - canceled
@@ -525,11 +525,11 @@ paths:
                 product_id:
                   type: integer
                   description: ''
-                  example: 11
+                  example: 9
                 currency:
                   type: string
                   description: ''
-                  example: ipsam
+                  example: ut
               required:
                 - payment_plan_id
                 - product_id
@@ -574,19 +574,19 @@ paths:
                 ref:
                   type: string
                   description: ''
-                  example: itaque
+                  example: corrupti
                 customer_id:
                   type: integer
                   description: ''
-                  example: 1
+                  example: 17
                 payment_plan_id:
                   type: integer
                   description: ''
-                  example: 16
+                  example: 19
                 status:
                   type: string
                   description: ''
-                  example: pending
+                  example: delivered
                   enum:
                     - new
                     - canceled
@@ -595,11 +595,11 @@ paths:
                 product_id:
                   type: integer
                   description: ''
-                  example: 3
+                  example: 6
                 currency:
                   type: string
                   description: ''
-                  example: dolor
+                  example: aut
               required:
                 - payment_plan_id
                 - product_id
@@ -672,11 +672,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: dolorem
+                  example: qui
                 description:
                   type: string
                   description: ''
-                  example: 'Quia ipsum ut delectus earum mollitia in laudantium.'
+                  example: 'Omnis ab non et tempora sit dignissimos.'
               required:
                 - name
                 - description
@@ -721,11 +721,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: debitis
+                  example: sint
                 description:
                   type: string
                   description: ''
-                  example: 'Et rerum accusamus consectetur cum sit quisquam atque.'
+                  example: 'Sed ipsum velit hic repellat similique.'
               required:
                 - name
                 - description
@@ -788,7 +788,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: et
+                  example: voluptatem
               required:
                 - name
       security: []
@@ -832,7 +832,7 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: aut
+                  example: ducimus
               required:
                 - name
       security: []
@@ -904,33 +904,33 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: quibusdam
+                  example: sit
                 description:
                   type: string
                   description: ''
-                  example: 'Perferendis quis alias et enim alias et.'
+                  example: 'Et porro ullam corporis sint quia.'
                 price:
                   type: number
                   description: ''
-                  example: 54189.525797
+                  example: 45.6
                 category:
                   type: array
                   description: ''
                   example:
-                    - dolorem
+                    - voluptas
                   items:
                     type: integer
                 tag:
                   type: array
                   description: ''
                   example:
-                    - sapiente
+                    - odit
                   items:
                     type: integer
                 bisiness_id:
                   type: integer
                   description: ''
-                  example: 1
+                  example: 8
               required:
                 - name
                 - price
@@ -976,33 +976,33 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: rerum
+                  example: ex
                 description:
                   type: string
                   description: ''
-                  example: 'Rem nihil vero vel illo libero ut fugiat quia.'
+                  example: 'Veniam eveniet aliquam quo.'
                 price:
                   type: number
                   description: ''
-                  example: 2654200.95412
+                  example: 1.13
                 category:
                   type: array
                   description: ''
                   example:
-                    - minus
+                    - aut
                   items:
                     type: integer
                 tag:
                   type: array
                   description: ''
                   example:
-                    - aperiam
+                    - aspernatur
                   items:
                     type: integer
                 bisiness_id:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 19
               required:
                 - name
                 - price

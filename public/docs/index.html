@@ -24,6 +24,7 @@
                     body .content .bash-example code { display: none; }
                     body .content .python-example code { display: none; }
                     body .content .javascript-example code { display: none; }
+                    body .content .php-example code { display: none; }
             </style>
 
     <script>
@@ -37,7 +38,7 @@
 
 </head>
 
-<body data-languages="[&quot;bash&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+<body data-languages="[&quot;bash&quot;,&quot;python&quot;,&quot;javascript&quot;,&quot;php&quot;]">
 
 <a href="#" id="nav-button">
     <span>
@@ -51,6 +52,7 @@
                                             <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                             <button type="button" class="lang-button" data-language-name="python">python</button>
                                             <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                            <button type="button" class="lang-button" data-language-name="php">php</button>
                     </div>
     
     <div class="search">
@@ -273,6 +275,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/users';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-GETapi-v1-users">
@@ -381,13 +399,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"tempore\",
-    \"email\": \"wava41@example.org\",
-    \"password\": \"m}m`c%3X}M*\",
+    \"name\": \"vero\",
+    \"email\": \"emard.gaylord@example.net\",
+    \"password\": \"KY&amp;Xh\\/nZ&amp;k\",
     \"roles\": [
-        \"incidunt\"
+        \"sit\"
     ],
-    \"locale\": \"ar_SD\"
+    \"locale\": \"mn_CN\"
 }"
 </code></pre></div>
 
@@ -398,13 +416,13 @@ import json
 
 url = 'http://localhost/api/v1/users'
 payload = {
-    "name": "tempore",
-    "email": "wava41@example.org",
-    "password": "m}m`c%3X}M*",
+    "name": "vero",
+    "email": "emard.gaylord@example.net",
+    "password": "KY&amp;Xh\/nZ&amp;k",
     "roles": [
-        "incidunt"
+        "sit"
     ],
-    "locale": "ar_SD"
+    "locale": "mn_CN"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -426,13 +444,13 @@ const headers = {
 };
 
 let body = {
-    "name": "tempore",
-    "email": "wava41@example.org",
-    "password": "m}m`c%3X}M*",
+    "name": "vero",
+    "email": "emard.gaylord@example.net",
+    "password": "KY&amp;Xh\/nZ&amp;k",
     "roles": [
-        "incidunt"
+        "sit"
     ],
-    "locale": "ar_SD"
+    "locale": "mn_CN"
 };
 
 fetch(url, {
@@ -440,6 +458,31 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/users';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'vero',
+            'email' =&gt; 'emard.gaylord@example.net',
+            'password' =&gt; 'KY&amp;Xh/nZ&amp;k',
+            'roles' =&gt; [
+                'sit',
+            ],
+            'locale' =&gt; 'mn_CN',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -521,10 +564,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-users"
-               value="tempore"
+               value="vero"
                data-component="body">
     <br>
-<p>Example: <code>tempore</code></p>
+<p>Example: <code>vero</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -532,10 +575,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-users"
-               value="wava41@example.org"
+               value="emard.gaylord@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>wava41@example.org</code></p>
+<p>Must be a valid email address. Example: <code>emard.gaylord@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -543,10 +586,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-users"
-               value="m}m`c%3X}M*"
+               value="KY&Xh/nZ&k"
                data-component="body">
     <br>
-<p>Example: <code>m}m</code>c%3X}M*`</p>
+<p>Example: <code>KY&amp;Xh/nZ&amp;k</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -563,10 +606,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="roles.0.id"                data-endpoint="POSTapi-v1-users"
-               value="14"
+               value="11"
                data-component="body">
     <br>
-<p>Example: <code>14</code></p>
+<p>Example: <code>11</code></p>
                     </div>
                                     </details>
         </div>
@@ -576,10 +619,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="locale"                data-endpoint="POSTapi-v1-users"
-               value="ar_SD"
+               value="mn_CN"
                data-component="body">
     <br>
-<p>Example: <code>ar_SD</code></p>
+<p>Example: <code>mn_CN</code></p>
         </div>
         </form>
 
@@ -629,6 +672,22 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/users/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -780,6 +839,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/users/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-DELETEapi-v1-users--id-">
@@ -914,6 +989,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/businesses';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-GETapi-v1-businesses">
@@ -1022,12 +1113,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"id\",
+    \"name\": \"similique\",
     \"registration_number\": \"rerum\",
-    \"address\": \"aspernatur\",
-    \"phone\": \"impedit\",
-    \"email\": \"lavern.jast@example.com\",
-    \"website\": \"occaecati\"
+    \"address\": \"quasi\",
+    \"phone\": \"vel\",
+    \"email\": \"mina.nicolas@example.org\",
+    \"website\": \"consectetur\"
 }"
 </code></pre></div>
 
@@ -1038,12 +1129,12 @@ import json
 
 url = 'http://localhost/api/v1/businesses'
 payload = {
-    "name": "id",
+    "name": "similique",
     "registration_number": "rerum",
-    "address": "aspernatur",
-    "phone": "impedit",
-    "email": "lavern.jast@example.com",
-    "website": "occaecati"
+    "address": "quasi",
+    "phone": "vel",
+    "email": "mina.nicolas@example.org",
+    "website": "consectetur"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1065,12 +1156,12 @@ const headers = {
 };
 
 let body = {
-    "name": "id",
+    "name": "similique",
     "registration_number": "rerum",
-    "address": "aspernatur",
-    "phone": "impedit",
-    "email": "lavern.jast@example.com",
-    "website": "occaecati"
+    "address": "quasi",
+    "phone": "vel",
+    "email": "mina.nicolas@example.org",
+    "website": "consectetur"
 };
 
 fetch(url, {
@@ -1078,6 +1169,30 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/businesses';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'similique',
+            'registration_number' =&gt; 'rerum',
+            'address' =&gt; 'quasi',
+            'phone' =&gt; 'vel',
+            'email' =&gt; 'mina.nicolas@example.org',
+            'website' =&gt; 'consectetur',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -1159,10 +1274,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-businesses"
-               value="id"
+               value="similique"
                data-component="body">
     <br>
-<p>Example: <code>id</code></p>
+<p>Example: <code>similique</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>registration_number</code></b>&nbsp;&nbsp;
@@ -1181,10 +1296,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="POSTapi-v1-businesses"
-               value="aspernatur"
+               value="quasi"
                data-component="body">
     <br>
-<p>Example: <code>aspernatur</code></p>
+<p>Example: <code>quasi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -1192,10 +1307,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="phone"                data-endpoint="POSTapi-v1-businesses"
-               value="impedit"
+               value="vel"
                data-component="body">
     <br>
-<p>Example: <code>impedit</code></p>
+<p>Example: <code>vel</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1203,10 +1318,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-businesses"
-               value="lavern.jast@example.com"
+               value="mina.nicolas@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>lavern.jast@example.com</code></p>
+<p>Must be a valid email address. Example: <code>mina.nicolas@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>website</code></b>&nbsp;&nbsp;
@@ -1214,10 +1329,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="website"                data-endpoint="POSTapi-v1-businesses"
-               value="occaecati"
+               value="consectetur"
                data-component="body">
     <br>
-<p>Example: <code>occaecati</code></p>
+<p>Example: <code>consectetur</code></p>
         </div>
         </form>
 
@@ -1267,6 +1382,22 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/businesses/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -1418,6 +1549,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/businesses/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-DELETEapi-v1-businesses--id-">
@@ -1552,6 +1699,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/wallets';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-GETapi-v1-wallets">
@@ -1660,9 +1823,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"odio\",
-    \"msisdn\": \"molestiae\",
-    \"business_id\": 15
+    \"name\": \"nesciunt\",
+    \"msisdn\": \"dolorem\",
+    \"business_id\": 8
 }"
 </code></pre></div>
 
@@ -1673,9 +1836,9 @@ import json
 
 url = 'http://localhost/api/v1/wallets'
 payload = {
-    "name": "odio",
-    "msisdn": "molestiae",
-    "business_id": 15
+    "name": "nesciunt",
+    "msisdn": "dolorem",
+    "business_id": 8
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1697,9 +1860,9 @@ const headers = {
 };
 
 let body = {
-    "name": "odio",
-    "msisdn": "molestiae",
-    "business_id": 15
+    "name": "nesciunt",
+    "msisdn": "dolorem",
+    "business_id": 8
 };
 
 fetch(url, {
@@ -1707,6 +1870,27 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/wallets';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'nesciunt',
+            'msisdn' =&gt; 'dolorem',
+            'business_id' =&gt; 8,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -1788,10 +1972,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-wallets"
-               value="odio"
+               value="nesciunt"
                data-component="body">
     <br>
-<p>Example: <code>odio</code></p>
+<p>Example: <code>nesciunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>msisdn</code></b>&nbsp;&nbsp;
@@ -1799,10 +1983,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="msisdn"                data-endpoint="POSTapi-v1-wallets"
-               value="molestiae"
+               value="dolorem"
                data-component="body">
     <br>
-<p>Example: <code>molestiae</code></p>
+<p>Example: <code>dolorem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>business_id</code></b>&nbsp;&nbsp;
@@ -1810,10 +1994,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="business_id"                data-endpoint="POSTapi-v1-wallets"
-               value="15"
+               value="8"
                data-component="body">
     <br>
-<p>Example: <code>15</code></p>
+<p>Example: <code>8</code></p>
         </div>
         </form>
 
@@ -1863,6 +2047,22 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/wallets/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -1985,8 +2185,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"name\": \"aperiam\",
-    \"msisdn\": \"dolorum\",
-    \"business_id\": 10
+    \"msisdn\": \"repudiandae\",
+    \"business_id\": 9
 }"
 </code></pre></div>
 
@@ -1998,8 +2198,8 @@ import json
 url = 'http://localhost/api/v1/wallets/1'
 payload = {
     "name": "aperiam",
-    "msisdn": "dolorum",
-    "business_id": 10
+    "msisdn": "repudiandae",
+    "business_id": 9
 }
 headers = {
   'Content-Type': 'application/json',
@@ -2022,8 +2222,8 @@ const headers = {
 
 let body = {
     "name": "aperiam",
-    "msisdn": "dolorum",
-    "business_id": 10
+    "msisdn": "repudiandae",
+    "business_id": 9
 };
 
 fetch(url, {
@@ -2031,6 +2231,27 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/wallets/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'aperiam',
+            'msisdn' =&gt; 'repudiandae',
+            'business_id' =&gt; 9,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -2139,10 +2360,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="msisdn"                data-endpoint="PUTapi-v1-wallets--id-"
-               value="dolorum"
+               value="repudiandae"
                data-component="body">
     <br>
-<p>Example: <code>dolorum</code></p>
+<p>Example: <code>repudiandae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>business_id</code></b>&nbsp;&nbsp;
@@ -2150,10 +2371,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="business_id"                data-endpoint="PUTapi-v1-wallets--id-"
-               value="10"
+               value="9"
                data-component="body">
     <br>
-<p>Example: <code>10</code></p>
+<p>Example: <code>9</code></p>
         </div>
         </form>
 
@@ -2203,6 +2424,22 @@ fetch(url, {
     method: "DELETE",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/wallets/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -2338,6 +2575,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/payment-plans';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-GETapi-v1-payment-plans">
@@ -2446,8 +2699,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ut\",
-    \"duration\": \"biweekly\"
+    \"name\": \"optio\",
+    \"duration\": \"monthly\"
 }"
 </code></pre></div>
 
@@ -2458,8 +2711,8 @@ import json
 
 url = 'http://localhost/api/v1/payment-plans'
 payload = {
-    "name": "ut",
-    "duration": "biweekly"
+    "name": "optio",
+    "duration": "monthly"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -2481,8 +2734,8 @@ const headers = {
 };
 
 let body = {
-    "name": "ut",
-    "duration": "biweekly"
+    "name": "optio",
+    "duration": "monthly"
 };
 
 fetch(url, {
@@ -2490,6 +2743,26 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/payment-plans';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'optio',
+            'duration' =&gt; 'monthly',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -2571,10 +2844,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-payment-plans"
-               value="ut"
+               value="optio"
                data-component="body">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>optio</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>duration</code></b>&nbsp;&nbsp;
@@ -2582,10 +2855,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="duration"                data-endpoint="POSTapi-v1-payment-plans"
-               value="biweekly"
+               value="monthly"
                data-component="body">
     <br>
-<p>Example: <code>biweekly</code></p>
+<p>Example: <code>monthly</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>weekly</code></li> <li><code>biweekly</code></li> <li><code>monthly</code></li> <li><code>quarterly</code></li></ul>
         </div>
@@ -2637,6 +2910,22 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/payment-plans/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -2758,7 +3047,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"doloremque\",
+    \"name\": \"aut\",
     \"duration\": \"weekly\"
 }"
 </code></pre></div>
@@ -2770,7 +3059,7 @@ import json
 
 url = 'http://localhost/api/v1/payment-plans/1'
 payload = {
-    "name": "doloremque",
+    "name": "aut",
     "duration": "weekly"
 }
 headers = {
@@ -2793,7 +3082,7 @@ const headers = {
 };
 
 let body = {
-    "name": "doloremque",
+    "name": "aut",
     "duration": "weekly"
 };
 
@@ -2802,6 +3091,26 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/payment-plans/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'aut',
+            'duration' =&gt; 'weekly',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -2899,10 +3208,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-payment-plans--id-"
-               value="doloremque"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>doloremque</code></p>
+<p>Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>duration</code></b>&nbsp;&nbsp;
@@ -2965,6 +3274,22 @@ fetch(url, {
     method: "DELETE",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/payment-plans/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -3100,6 +3425,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/subscriptions';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-GETapi-v1-subscriptions">
@@ -3208,12 +3549,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"ref\": \"ducimus\",
-    \"customer_id\": 6,
-    \"payment_plan_id\": 8,
-    \"status\": \"delivered\",
-    \"product_id\": 11,
-    \"currency\": \"ipsam\"
+    \"ref\": \"magni\",
+    \"customer_id\": 20,
+    \"payment_plan_id\": 10,
+    \"status\": \"pending\",
+    \"product_id\": 9,
+    \"currency\": \"ut\"
 }"
 </code></pre></div>
 
@@ -3224,12 +3565,12 @@ import json
 
 url = 'http://localhost/api/v1/subscriptions'
 payload = {
-    "ref": "ducimus",
-    "customer_id": 6,
-    "payment_plan_id": 8,
-    "status": "delivered",
-    "product_id": 11,
-    "currency": "ipsam"
+    "ref": "magni",
+    "customer_id": 20,
+    "payment_plan_id": 10,
+    "status": "pending",
+    "product_id": 9,
+    "currency": "ut"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -3251,12 +3592,12 @@ const headers = {
 };
 
 let body = {
-    "ref": "ducimus",
-    "customer_id": 6,
-    "payment_plan_id": 8,
-    "status": "delivered",
-    "product_id": 11,
-    "currency": "ipsam"
+    "ref": "magni",
+    "customer_id": 20,
+    "payment_plan_id": 10,
+    "status": "pending",
+    "product_id": 9,
+    "currency": "ut"
 };
 
 fetch(url, {
@@ -3264,6 +3605,30 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/subscriptions';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'ref' =&gt; 'magni',
+            'customer_id' =&gt; 20,
+            'payment_plan_id' =&gt; 10,
+            'status' =&gt; 'pending',
+            'product_id' =&gt; 9,
+            'currency' =&gt; 'ut',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -3345,10 +3710,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ref"                data-endpoint="POSTapi-v1-subscriptions"
-               value="ducimus"
+               value="magni"
                data-component="body">
     <br>
-<p>Example: <code>ducimus</code></p>
+<p>Example: <code>magni</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>customer_id</code></b>&nbsp;&nbsp;
@@ -3356,10 +3721,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="customer_id"                data-endpoint="POSTapi-v1-subscriptions"
-               value="6"
+               value="20"
                data-component="body">
     <br>
-<p>Example: <code>6</code></p>
+<p>Example: <code>20</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>payment_plan_id</code></b>&nbsp;&nbsp;
@@ -3367,10 +3732,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="payment_plan_id"                data-endpoint="POSTapi-v1-subscriptions"
-               value="8"
+               value="10"
                data-component="body">
     <br>
-<p>Example: <code>8</code></p>
+<p>Example: <code>10</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -3378,10 +3743,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="POSTapi-v1-subscriptions"
-               value="delivered"
+               value="pending"
                data-component="body">
     <br>
-<p>Example: <code>delivered</code></p>
+<p>Example: <code>pending</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>new</code></li> <li><code>canceled</code></li> <li><code>delivered</code></li> <li><code>pending</code></li></ul>
         </div>
@@ -3391,10 +3756,10 @@ Must be one of:
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="product_id"                data-endpoint="POSTapi-v1-subscriptions"
-               value="11"
+               value="9"
                data-component="body">
     <br>
-<p>Example: <code>11</code></p>
+<p>Example: <code>9</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>currency</code></b>&nbsp;&nbsp;
@@ -3402,10 +3767,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="currency"                data-endpoint="POSTapi-v1-subscriptions"
-               value="ipsam"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>ipsam</code></p>
+<p>Example: <code>ut</code></p>
         </div>
         </form>
 
@@ -3455,6 +3820,22 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/subscriptions/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -3576,12 +3957,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"ref\": \"itaque\",
-    \"customer_id\": 1,
-    \"payment_plan_id\": 16,
-    \"status\": \"pending\",
-    \"product_id\": 3,
-    \"currency\": \"dolor\"
+    \"ref\": \"corrupti\",
+    \"customer_id\": 17,
+    \"payment_plan_id\": 19,
+    \"status\": \"delivered\",
+    \"product_id\": 6,
+    \"currency\": \"aut\"
 }"
 </code></pre></div>
 
@@ -3592,12 +3973,12 @@ import json
 
 url = 'http://localhost/api/v1/subscriptions/1'
 payload = {
-    "ref": "itaque",
-    "customer_id": 1,
-    "payment_plan_id": 16,
-    "status": "pending",
-    "product_id": 3,
-    "currency": "dolor"
+    "ref": "corrupti",
+    "customer_id": 17,
+    "payment_plan_id": 19,
+    "status": "delivered",
+    "product_id": 6,
+    "currency": "aut"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -3619,12 +4000,12 @@ const headers = {
 };
 
 let body = {
-    "ref": "itaque",
-    "customer_id": 1,
-    "payment_plan_id": 16,
-    "status": "pending",
-    "product_id": 3,
-    "currency": "dolor"
+    "ref": "corrupti",
+    "customer_id": 17,
+    "payment_plan_id": 19,
+    "status": "delivered",
+    "product_id": 6,
+    "currency": "aut"
 };
 
 fetch(url, {
@@ -3632,6 +4013,30 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/subscriptions/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'ref' =&gt; 'corrupti',
+            'customer_id' =&gt; 17,
+            'payment_plan_id' =&gt; 19,
+            'status' =&gt; 'delivered',
+            'product_id' =&gt; 6,
+            'currency' =&gt; 'aut',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -3729,10 +4134,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ref"                data-endpoint="PUTapi-v1-subscriptions--id-"
-               value="itaque"
+               value="corrupti"
                data-component="body">
     <br>
-<p>Example: <code>itaque</code></p>
+<p>Example: <code>corrupti</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>customer_id</code></b>&nbsp;&nbsp;
@@ -3740,10 +4145,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="customer_id"                data-endpoint="PUTapi-v1-subscriptions--id-"
-               value="1"
+               value="17"
                data-component="body">
     <br>
-<p>Example: <code>1</code></p>
+<p>Example: <code>17</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>payment_plan_id</code></b>&nbsp;&nbsp;
@@ -3751,10 +4156,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="payment_plan_id"                data-endpoint="PUTapi-v1-subscriptions--id-"
-               value="16"
+               value="19"
                data-component="body">
     <br>
-<p>Example: <code>16</code></p>
+<p>Example: <code>19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -3762,10 +4167,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="PUTapi-v1-subscriptions--id-"
-               value="pending"
+               value="delivered"
                data-component="body">
     <br>
-<p>Example: <code>pending</code></p>
+<p>Example: <code>delivered</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>new</code></li> <li><code>canceled</code></li> <li><code>delivered</code></li> <li><code>pending</code></li></ul>
         </div>
@@ -3775,10 +4180,10 @@ Must be one of:
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="product_id"                data-endpoint="PUTapi-v1-subscriptions--id-"
-               value="3"
+               value="6"
                data-component="body">
     <br>
-<p>Example: <code>3</code></p>
+<p>Example: <code>6</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>currency</code></b>&nbsp;&nbsp;
@@ -3786,10 +4191,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="currency"                data-endpoint="PUTapi-v1-subscriptions--id-"
-               value="dolor"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>dolor</code></p>
+<p>Example: <code>aut</code></p>
         </div>
         </form>
 
@@ -3839,6 +4244,22 @@ fetch(url, {
     method: "DELETE",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/subscriptions/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -3974,6 +4395,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-categories/media';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-POSTapi-v1-product-categories-media">
@@ -4096,6 +4533,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-categories';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-GETapi-v1-product-categories">
@@ -4204,8 +4657,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"dolorem\",
-    \"description\": \"Quia ipsum ut delectus earum mollitia in laudantium.\"
+    \"name\": \"qui\",
+    \"description\": \"Omnis ab non et tempora sit dignissimos.\"
 }"
 </code></pre></div>
 
@@ -4216,8 +4669,8 @@ import json
 
 url = 'http://localhost/api/v1/product-categories'
 payload = {
-    "name": "dolorem",
-    "description": "Quia ipsum ut delectus earum mollitia in laudantium."
+    "name": "qui",
+    "description": "Omnis ab non et tempora sit dignissimos."
 }
 headers = {
   'Content-Type': 'application/json',
@@ -4239,8 +4692,8 @@ const headers = {
 };
 
 let body = {
-    "name": "dolorem",
-    "description": "Quia ipsum ut delectus earum mollitia in laudantium."
+    "name": "qui",
+    "description": "Omnis ab non et tempora sit dignissimos."
 };
 
 fetch(url, {
@@ -4248,6 +4701,26 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-categories';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'qui',
+            'description' =&gt; 'Omnis ab non et tempora sit dignissimos.',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -4329,10 +4802,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-product-categories"
-               value="dolorem"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>dolorem</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -4340,10 +4813,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-product-categories"
-               value="Quia ipsum ut delectus earum mollitia in laudantium."
+               value="Omnis ab non et tempora sit dignissimos."
                data-component="body">
     <br>
-<p>Example: <code>Quia ipsum ut delectus earum mollitia in laudantium.</code></p>
+<p>Example: <code>Omnis ab non et tempora sit dignissimos.</code></p>
         </div>
         </form>
 
@@ -4393,6 +4866,22 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-categories/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -4514,8 +5003,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"debitis\",
-    \"description\": \"Et rerum accusamus consectetur cum sit quisquam atque.\"
+    \"name\": \"sint\",
+    \"description\": \"Sed ipsum velit hic repellat similique.\"
 }"
 </code></pre></div>
 
@@ -4526,8 +5015,8 @@ import json
 
 url = 'http://localhost/api/v1/product-categories/1'
 payload = {
-    "name": "debitis",
-    "description": "Et rerum accusamus consectetur cum sit quisquam atque."
+    "name": "sint",
+    "description": "Sed ipsum velit hic repellat similique."
 }
 headers = {
   'Content-Type': 'application/json',
@@ -4549,8 +5038,8 @@ const headers = {
 };
 
 let body = {
-    "name": "debitis",
-    "description": "Et rerum accusamus consectetur cum sit quisquam atque."
+    "name": "sint",
+    "description": "Sed ipsum velit hic repellat similique."
 };
 
 fetch(url, {
@@ -4558,6 +5047,26 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-categories/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'sint',
+            'description' =&gt; 'Sed ipsum velit hic repellat similique.',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -4655,10 +5164,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-product-categories--id-"
-               value="debitis"
+               value="sint"
                data-component="body">
     <br>
-<p>Example: <code>debitis</code></p>
+<p>Example: <code>sint</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -4666,10 +5175,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-product-categories--id-"
-               value="Et rerum accusamus consectetur cum sit quisquam atque."
+               value="Sed ipsum velit hic repellat similique."
                data-component="body">
     <br>
-<p>Example: <code>Et rerum accusamus consectetur cum sit quisquam atque.</code></p>
+<p>Example: <code>Sed ipsum velit hic repellat similique.</code></p>
         </div>
         </form>
 
@@ -4719,6 +5228,22 @@ fetch(url, {
     method: "DELETE",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-categories/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -4854,6 +5379,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-tags';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-GETapi-v1-product-tags">
@@ -4962,7 +5503,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"et\"
+    \"name\": \"voluptatem\"
 }"
 </code></pre></div>
 
@@ -4973,7 +5514,7 @@ import json
 
 url = 'http://localhost/api/v1/product-tags'
 payload = {
-    "name": "et"
+    "name": "voluptatem"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -4995,7 +5536,7 @@ const headers = {
 };
 
 let body = {
-    "name": "et"
+    "name": "voluptatem"
 };
 
 fetch(url, {
@@ -5003,6 +5544,25 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-tags';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'voluptatem',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -5084,10 +5644,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-product-tags"
-               value="et"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>voluptatem</code></p>
         </div>
         </form>
 
@@ -5137,6 +5697,22 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-tags/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -5258,7 +5834,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"aut\"
+    \"name\": \"ducimus\"
 }"
 </code></pre></div>
 
@@ -5269,7 +5845,7 @@ import json
 
 url = 'http://localhost/api/v1/product-tags/1'
 payload = {
-    "name": "aut"
+    "name": "ducimus"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -5291,7 +5867,7 @@ const headers = {
 };
 
 let body = {
-    "name": "aut"
+    "name": "ducimus"
 };
 
 fetch(url, {
@@ -5299,6 +5875,25 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-tags/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'ducimus',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -5396,10 +5991,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-product-tags--id-"
-               value="aut"
+               value="ducimus"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>ducimus</code></p>
         </div>
         </form>
 
@@ -5449,6 +6044,22 @@ fetch(url, {
     method: "DELETE",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/product-tags/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -5584,6 +6195,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/products/media';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-POSTapi-v1-products-media">
@@ -5706,6 +6333,22 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/products';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-GETapi-v1-products">
@@ -5814,16 +6457,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"quibusdam\",
-    \"description\": \"Perferendis quis alias et enim alias et.\",
-    \"price\": 54189.525797,
+    \"name\": \"sit\",
+    \"description\": \"Et porro ullam corporis sint quia.\",
+    \"price\": 45.6,
     \"category\": [
-        \"dolorem\"
+        \"voluptas\"
     ],
     \"tag\": [
-        \"sapiente\"
+        \"odit\"
     ],
-    \"bisiness_id\": 1
+    \"bisiness_id\": 8
 }"
 </code></pre></div>
 
@@ -5834,16 +6477,16 @@ import json
 
 url = 'http://localhost/api/v1/products'
 payload = {
-    "name": "quibusdam",
-    "description": "Perferendis quis alias et enim alias et.",
-    "price": 54189.525797,
+    "name": "sit",
+    "description": "Et porro ullam corporis sint quia.",
+    "price": 45.6,
     "category": [
-        "dolorem"
+        "voluptas"
     ],
     "tag": [
-        "sapiente"
+        "odit"
     ],
-    "bisiness_id": 1
+    "bisiness_id": 8
 }
 headers = {
   'Content-Type': 'application/json',
@@ -5865,16 +6508,16 @@ const headers = {
 };
 
 let body = {
-    "name": "quibusdam",
-    "description": "Perferendis quis alias et enim alias et.",
-    "price": 54189.525797,
+    "name": "sit",
+    "description": "Et porro ullam corporis sint quia.",
+    "price": 45.6,
     "category": [
-        "dolorem"
+        "voluptas"
     ],
     "tag": [
-        "sapiente"
+        "odit"
     ],
-    "bisiness_id": 1
+    "bisiness_id": 8
 };
 
 fetch(url, {
@@ -5882,6 +6525,34 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/products';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'sit',
+            'description' =&gt; 'Et porro ullam corporis sint quia.',
+            'price' =&gt; 45.6,
+            'category' =&gt; [
+                'voluptas',
+            ],
+            'tag' =&gt; [
+                'odit',
+            ],
+            'bisiness_id' =&gt; 8,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -5963,10 +6634,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-products"
-               value="quibusdam"
+               value="sit"
                data-component="body">
     <br>
-<p>Example: <code>quibusdam</code></p>
+<p>Example: <code>sit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -5974,10 +6645,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-products"
-               value="Perferendis quis alias et enim alias et."
+               value="Et porro ullam corporis sint quia."
                data-component="body">
     <br>
-<p>Example: <code>Perferendis quis alias et enim alias et.</code></p>
+<p>Example: <code>Et porro ullam corporis sint quia.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -5985,10 +6656,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="price"                data-endpoint="POSTapi-v1-products"
-               value="54189.525797"
+               value="45.6"
                data-component="body">
     <br>
-<p>Example: <code>54189.525797</code></p>
+<p>Example: <code>45.6</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -6005,10 +6676,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="category.0.id"                data-endpoint="POSTapi-v1-products"
-               value="12"
+               value="2"
                data-component="body">
     <br>
-<p>Example: <code>12</code></p>
+<p>Example: <code>2</code></p>
                     </div>
                                     </details>
         </div>
@@ -6027,10 +6698,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tag.0.id"                data-endpoint="POSTapi-v1-products"
-               value="2"
+               value="16"
                data-component="body">
     <br>
-<p>Example: <code>2</code></p>
+<p>Example: <code>16</code></p>
                     </div>
                                     </details>
         </div>
@@ -6040,10 +6711,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="bisiness_id"                data-endpoint="POSTapi-v1-products"
-               value="1"
+               value="8"
                data-component="body">
     <br>
-<p>Example: <code>1</code></p>
+<p>Example: <code>8</code></p>
         </div>
         </form>
 
@@ -6093,6 +6764,22 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/products/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -6214,16 +6901,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"rerum\",
-    \"description\": \"Rem nihil vero vel illo libero ut fugiat quia.\",
-    \"price\": 2654200.95412,
+    \"name\": \"ex\",
+    \"description\": \"Veniam eveniet aliquam quo.\",
+    \"price\": 1.13,
     \"category\": [
-        \"minus\"
+        \"aut\"
     ],
     \"tag\": [
-        \"aperiam\"
+        \"aspernatur\"
     ],
-    \"bisiness_id\": 13
+    \"bisiness_id\": 19
 }"
 </code></pre></div>
 
@@ -6234,16 +6921,16 @@ import json
 
 url = 'http://localhost/api/v1/products/1'
 payload = {
-    "name": "rerum",
-    "description": "Rem nihil vero vel illo libero ut fugiat quia.",
-    "price": 2654200.95412,
+    "name": "ex",
+    "description": "Veniam eveniet aliquam quo.",
+    "price": 1.13,
     "category": [
-        "minus"
+        "aut"
     ],
     "tag": [
-        "aperiam"
+        "aspernatur"
     ],
-    "bisiness_id": 13
+    "bisiness_id": 19
 }
 headers = {
   'Content-Type': 'application/json',
@@ -6265,16 +6952,16 @@ const headers = {
 };
 
 let body = {
-    "name": "rerum",
-    "description": "Rem nihil vero vel illo libero ut fugiat quia.",
-    "price": 2654200.95412,
+    "name": "ex",
+    "description": "Veniam eveniet aliquam quo.",
+    "price": 1.13,
     "category": [
-        "minus"
+        "aut"
     ],
     "tag": [
-        "aperiam"
+        "aspernatur"
     ],
-    "bisiness_id": 13
+    "bisiness_id": 19
 };
 
 fetch(url, {
@@ -6282,6 +6969,34 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/products/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'ex',
+            'description' =&gt; 'Veniam eveniet aliquam quo.',
+            'price' =&gt; 1.13,
+            'category' =&gt; [
+                'aut',
+            ],
+            'tag' =&gt; [
+                'aspernatur',
+            ],
+            'bisiness_id' =&gt; 19,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -6379,10 +7094,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-products--id-"
-               value="rerum"
+               value="ex"
                data-component="body">
     <br>
-<p>Example: <code>rerum</code></p>
+<p>Example: <code>ex</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -6390,10 +7105,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-products--id-"
-               value="Rem nihil vero vel illo libero ut fugiat quia."
+               value="Veniam eveniet aliquam quo."
                data-component="body">
     <br>
-<p>Example: <code>Rem nihil vero vel illo libero ut fugiat quia.</code></p>
+<p>Example: <code>Veniam eveniet aliquam quo.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -6401,10 +7116,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="price"                data-endpoint="PUTapi-v1-products--id-"
-               value="2654200.95412"
+               value="1.13"
                data-component="body">
     <br>
-<p>Example: <code>2654200.95412</code></p>
+<p>Example: <code>1.13</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -6421,10 +7136,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="category.0.id"                data-endpoint="PUTapi-v1-products--id-"
-               value="1"
+               value="15"
                data-component="body">
     <br>
-<p>Example: <code>1</code></p>
+<p>Example: <code>15</code></p>
                     </div>
                                     </details>
         </div>
@@ -6443,10 +7158,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tag.0.id"                data-endpoint="PUTapi-v1-products--id-"
-               value="11"
+               value="20"
                data-component="body">
     <br>
-<p>Example: <code>11</code></p>
+<p>Example: <code>20</code></p>
                     </div>
                                     </details>
         </div>
@@ -6456,10 +7171,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="bisiness_id"                data-endpoint="PUTapi-v1-products--id-"
-               value="13"
+               value="19"
                data-component="body">
     <br>
-<p>Example: <code>13</code></p>
+<p>Example: <code>19</code></p>
         </div>
         </form>
 
@@ -6509,6 +7224,22 @@ fetch(url, {
     method: "DELETE",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/v1/products/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -6606,6 +7337,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                                         <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                                         <button type="button" class="lang-button" data-language-name="python">python</button>
                                                         <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                                        <button type="button" class="lang-button" data-language-name="php">php</button>
                             </div>
             </div>
 </div>

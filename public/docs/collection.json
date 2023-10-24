@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "277b9118-5d53-4fe7-ad4f-5c1c76ecd789",
+        "_postman_id": "d6469429-eaeb-41e8-a453-1b52bd95411d",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -89,7 +89,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"tempore\",\"email\":\"wava41@example.org\",\"password\":\"m}m`c%3X}M*\",\"roles\":[\"incidunt\"],\"locale\":\"ar_SD\"}"
+                            "raw": "{\"name\":\"vero\",\"email\":\"emard.gaylord@example.net\",\"password\":\"KY&Xh\\\/nZ&k\",\"roles\":[\"sit\"],\"locale\":\"mn_CN\"}"
                         },
                         "description": "",
                         "auth": {
@@ -260,7 +260,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"id\",\"registration_number\":\"rerum\",\"address\":\"aspernatur\",\"phone\":\"impedit\",\"email\":\"lavern.jast@example.com\",\"website\":\"occaecati\"}"
+                            "raw": "{\"name\":\"similique\",\"registration_number\":\"rerum\",\"address\":\"quasi\",\"phone\":\"vel\",\"email\":\"mina.nicolas@example.org\",\"website\":\"consectetur\"}"
                         },
                         "description": "",
                         "auth": {
@@ -431,7 +431,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"odio\",\"msisdn\":\"molestiae\",\"business_id\":15}"
+                            "raw": "{\"name\":\"nesciunt\",\"msisdn\":\"dolorem\",\"business_id\":8}"
                         },
                         "description": "",
                         "auth": {
@@ -526,7 +526,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"aperiam\",\"msisdn\":\"dolorum\",\"business_id\":10}"
+                            "raw": "{\"name\":\"aperiam\",\"msisdn\":\"repudiandae\",\"business_id\":9}"
                         },
                         "description": "",
                         "auth": {
@@ -641,7 +641,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ut\",\"duration\":\"biweekly\"}"
+                            "raw": "{\"name\":\"optio\",\"duration\":\"monthly\"}"
                         },
                         "description": "",
                         "auth": {
@@ -736,7 +736,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"doloremque\",\"duration\":\"weekly\"}"
+                            "raw": "{\"name\":\"aut\",\"duration\":\"weekly\"}"
                         },
                         "description": "",
                         "auth": {
@@ -851,7 +851,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"ref\":\"ducimus\",\"customer_id\":6,\"payment_plan_id\":8,\"status\":\"delivered\",\"product_id\":11,\"currency\":\"ipsam\"}"
+                            "raw": "{\"ref\":\"magni\",\"customer_id\":20,\"payment_plan_id\":10,\"status\":\"pending\",\"product_id\":9,\"currency\":\"ut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -946,7 +946,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"ref\":\"itaque\",\"customer_id\":1,\"payment_plan_id\":16,\"status\":\"pending\",\"product_id\":3,\"currency\":\"dolor\"}"
+                            "raw": "{\"ref\":\"corrupti\",\"customer_id\":17,\"payment_plan_id\":19,\"status\":\"delivered\",\"product_id\":6,\"currency\":\"aut\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1089,7 +1089,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"dolorem\",\"description\":\"Quia ipsum ut delectus earum mollitia in laudantium.\"}"
+                            "raw": "{\"name\":\"qui\",\"description\":\"Omnis ab non et tempora sit dignissimos.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1184,7 +1184,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"debitis\",\"description\":\"Et rerum accusamus consectetur cum sit quisquam atque.\"}"
+                            "raw": "{\"name\":\"sint\",\"description\":\"Sed ipsum velit hic repellat similique.\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1299,7 +1299,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"et\"}"
+                            "raw": "{\"name\":\"voluptatem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1394,7 +1394,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"aut\"}"
+                            "raw": "{\"name\":\"ducimus\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1537,7 +1537,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quibusdam\",\"description\":\"Perferendis quis alias et enim alias et.\",\"price\":54189.525797,\"category\":[\"dolorem\"],\"tag\":[\"sapiente\"],\"bisiness_id\":1}"
+                            "raw": "{\"name\":\"sit\",\"description\":\"Et porro ullam corporis sint quia.\",\"price\":45.6,\"category\":[\"voluptas\"],\"tag\":[\"odit\"],\"bisiness_id\":8}"
                         },
                         "description": "",
                         "auth": {
@@ -1632,7 +1632,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"rerum\",\"description\":\"Rem nihil vero vel illo libero ut fugiat quia.\",\"price\":2654200.95412,\"category\":[\"minus\"],\"tag\":[\"aperiam\"],\"bisiness_id\":13}"
+                            "raw": "{\"name\":\"ex\",\"description\":\"Veniam eveniet aliquam quo.\",\"price\":1.13,\"category\":[\"aut\"],\"tag\":[\"aspernatur\"],\"bisiness_id\":19}"
                         },
                         "description": "",
                         "auth": {
