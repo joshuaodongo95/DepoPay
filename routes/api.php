@@ -8,6 +8,8 @@ use App\Http\Controllers\Api\V1\Admin\ProductTagApiController;
 use App\Http\Controllers\Api\V1\Admin\SubscriptionApiController;
 use App\Http\Controllers\Api\V1\Admin\UserApiController;
 use App\Http\Controllers\Api\V1\Admin\WalletApiController;
+use Illuminate\Http\Request;
+
 
 Route::group(['prefix' => 'v1', 'as' => 'api.', 'middleware' => ['auth:sanctum']], function () {
     // Users
@@ -35,4 +37,11 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'middleware' => ['auth:sanctum']
     // Product
     Route::post('products/media', [ProductApiController::class, 'storeMedia'])->name('products.store_media');
     Route::apiResource('products', ProductApiController::class);
+
+    
+    Route::post('/tokens/create', function (Request $request) {
+        $token = $request->user()->createToken($request->token_name);
+    
+        return ['token' => $token->plainTextToken];
+    });
 });

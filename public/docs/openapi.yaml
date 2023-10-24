@@ -1,0 +1,1042 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/users:
+    get:
+      summary: ''
+      operationId: getApiV1Users
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Users
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: quisquam
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: maegan53@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: '.~US''@4Q-~QQ{I'
+                roles:
+                  type: array
+                  description: ''
+                  example:
+                    - et
+                  items:
+                    type: integer
+                locale:
+                  type: string
+                  description: ''
+                  example: de_DE
+              required:
+                - name
+                - email
+                - password
+                - roles
+      security: []
+  '/api/v1/users/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1UsersId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1UsersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/businesses:
+    get:
+      summary: ''
+      operationId: getApiV1Businesses
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Businesses
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: est
+                registration_number:
+                  type: string
+                  description: ''
+                  example: quisquam
+                address:
+                  type: string
+                  description: ''
+                  example: quo
+                phone:
+                  type: string
+                  description: ''
+                  example: dolores
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: monique.bogisich@example.net
+                website:
+                  type: string
+                  description: ''
+                  example: est
+              required:
+                - registration_number
+                - phone
+      security: []
+  '/api/v1/businesses/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1BusinessesId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1BusinessesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the business.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/wallets:
+    get:
+      summary: ''
+      operationId: getApiV1Wallets
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Wallets
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: aliquam
+                msisdn:
+                  type: string
+                  description: ''
+                  example: sunt
+                business_id:
+                  type: integer
+                  description: ''
+                  example: 8
+              required:
+                - msisdn
+      security: []
+  '/api/v1/wallets/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1WalletsId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1WalletsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: sunt
+                msisdn:
+                  type: string
+                  description: ''
+                  example: tempore
+                business_id:
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - msisdn
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1WalletsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the wallet.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/payment-plans:
+    get:
+      summary: ''
+      operationId: getApiV1PaymentPlans
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1PaymentPlans
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: totam
+                duration:
+                  type: string
+                  description: ''
+                  example: monthly
+                  enum:
+                    - weekly
+                    - biweekly
+                    - monthly
+                    - quarterly
+              required:
+                - name
+      security: []
+  '/api/v1/payment-plans/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1PaymentPlansId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1PaymentPlansId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: id
+                duration:
+                  type: string
+                  description: ''
+                  example: quarterly
+                  enum:
+                    - weekly
+                    - biweekly
+                    - monthly
+                    - quarterly
+              required:
+                - name
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1PaymentPlansId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the payment plan.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/subscriptions:
+    get:
+      summary: ''
+      operationId: getApiV1Subscriptions
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Subscriptions
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ref:
+                  type: string
+                  description: ''
+                  example: impedit
+                customer_id:
+                  type: integer
+                  description: ''
+                  example: 9
+                payment_plan_id:
+                  type: integer
+                  description: ''
+                  example: 19
+                status:
+                  type: string
+                  description: ''
+                  example: pending
+                  enum:
+                    - new
+                    - canceled
+                    - delivered
+                    - pending
+                product_id:
+                  type: integer
+                  description: ''
+                  example: 3
+                currency:
+                  type: string
+                  description: ''
+                  example: non
+              required:
+                - payment_plan_id
+                - product_id
+      security: []
+  '/api/v1/subscriptions/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1SubscriptionsId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1SubscriptionsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ref:
+                  type: string
+                  description: ''
+                  example: non
+                customer_id:
+                  type: integer
+                  description: ''
+                  example: 11
+                payment_plan_id:
+                  type: integer
+                  description: ''
+                  example: 13
+                status:
+                  type: string
+                  description: ''
+                  example: new
+                  enum:
+                    - new
+                    - canceled
+                    - delivered
+                    - pending
+                product_id:
+                  type: integer
+                  description: ''
+                  example: 6
+                currency:
+                  type: string
+                  description: ''
+                  example: quasi
+              required:
+                - payment_plan_id
+                - product_id
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1SubscriptionsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the subscription.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/product-categories/media:
+    post:
+      summary: ''
+      operationId: postApiV1ProductCategoriesMedia
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/product-categories:
+    get:
+      summary: ''
+      operationId: getApiV1ProductCategories
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1ProductCategories
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: maiores
+                description:
+                  type: string
+                  description: ''
+                  example: 'Sed quisquam esse beatae aut aperiam voluptas sequi.'
+              required:
+                - name
+                - description
+      security: []
+  '/api/v1/product-categories/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1ProductCategoriesId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1ProductCategoriesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: illo
+                description:
+                  type: string
+                  description: ''
+                  example: 'Aspernatur architecto voluptatem optio praesentium natus debitis molestiae.'
+              required:
+                - name
+                - description
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1ProductCategoriesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the product category.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/product-tags:
+    get:
+      summary: ''
+      operationId: getApiV1ProductTags
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1ProductTags
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: beatae
+              required:
+                - name
+      security: []
+  '/api/v1/product-tags/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1ProductTagsId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1ProductTagsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: explicabo
+              required:
+                - name
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1ProductTagsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the product tag.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/products/media:
+    post:
+      summary: ''
+      operationId: postApiV1ProductsMedia
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/products:
+    get:
+      summary: ''
+      operationId: getApiV1Products
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Products
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: non
+                description:
+                  type: string
+                  description: ''
+                  example: 'Omnis est qui facere est a architecto est vero.'
+                price:
+                  type: number
+                  description: ''
+                  example: 815566.5406
+                category:
+                  type: array
+                  description: ''
+                  example:
+                    - earum
+                  items:
+                    type: integer
+                tag:
+                  type: array
+                  description: ''
+                  example:
+                    - dignissimos
+                  items:
+                    type: integer
+                bisiness_id:
+                  type: integer
+                  description: ''
+                  example: 19
+              required:
+                - name
+                - price
+                - bisiness_id
+      security: []
+  '/api/v1/products/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1ProductsId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1ProductsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: rerum
+                description:
+                  type: string
+                  description: ''
+                  example: 'Quia quia dolores dolorem excepturi molestias aut.'
+                price:
+                  type: number
+                  description: ''
+                  example: 2.0
+                category:
+                  type: array
+                  description: ''
+                  example:
+                    - aperiam
+                  items:
+                    type: integer
+                tag:
+                  type: array
+                  description: ''
+                  example:
+                    - odio
+                  items:
+                    type: integer
+                bisiness_id:
+                  type: integer
+                  description: ''
+                  example: 19
+              required:
+                - name
+                - price
+                - bisiness_id
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1ProductsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the product.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/tokens/create:
+    post:
+      summary: ''
+      operationId: postApiV1TokensCreate
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

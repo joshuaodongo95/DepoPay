@@ -40,10 +40,10 @@ class PaymentPlan extends Model
     ];
 
     public const DURATION_SELECT = [
-        'weekly'    => 'weekly',
-        'biweekly'  => 'biweekly',
-        'monthly'   => 'monthly',
-        'quarterly' => 'quarterly',
+        'weekly'    => 'WEEKLY',
+        'biweekly'  => 'BIWEEKLY',
+        'monthly'   => 'MONTHLY',
+        'quarterly' => 'QUARTERLY',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

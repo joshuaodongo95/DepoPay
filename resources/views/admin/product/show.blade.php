@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-<div class="row">
     <div class="card bg-blueGray-100">
         <div class="card-header">
             <div class="card-header-container">
@@ -13,10 +12,10 @@
             </div>
         </div>
 
-        <div class="card-body">
+        <div class="card-body w-12">
             <div class="pt-3">
                 <table class="table table-view">
-                    <tbody class="bg-white">
+                    <tbody class="bg-white w-12">
                         <tr>
                             <th>
                                 {{ trans('cruds.product.fields.id') }}
@@ -54,7 +53,7 @@
                                 {{ trans('cruds.product.fields.category') }}
                             </th>
                             <td>
-                                @foreach($product->category as $key => $entry)
+                                @foreach ($product->category as $key => $entry)
                                     <span class="badge badge-relationship">{{ $entry->name }}</span>
                                 @endforeach
                             </td>
@@ -64,7 +63,7 @@
                                 {{ trans('cruds.product.fields.tag') }}
                             </th>
                             <td>
-                                @foreach($product->tag as $key => $entry)
+                                @foreach ($product->tag as $key => $entry)
                                     <span class="badge badge-relationship">{{ $entry->name }}</span>
                                 @endforeach
                             </td>
@@ -74,9 +73,10 @@
                                 {{ trans('cruds.product.fields.photo') }}
                             </th>
                             <td>
-                                @foreach($product->photo as $key => $entry)
+                                @foreach ($product->photo as $key => $entry)
                                     <a class="link-photo" href="{{ $entry['url'] }}">
-                                        <img src="{{ $entry['preview_thumbnail'] }}" alt="{{ $entry['name'] }}" title="{{ $entry['name'] }}">
+                                        <img src="{{ $entry['preview_thumbnail'] }}" alt="{{ $entry['name'] }}"
+                                            title="{{ $entry['name'] }}">
                                     </a>
                                 @endforeach
                             </td>
@@ -86,7 +86,8 @@
                                 {{ trans('cruds.product.fields.bisiness') }}
                             </th>
                             <td>
-                                @if($product->bisiness)
+                                @if ($product->bisiness)
+                                    {!! QrCode::size(300)->backgroundColor(173, 216, 230)->generate('http://127.0.0.1:8000/admin/products/' . $product->bisiness->id) !!}
                                     <span class="badge badge-relationship">{{ $product->bisiness->name ?? '' }}</span>
                                 @endif
                             </td>
@@ -106,5 +107,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

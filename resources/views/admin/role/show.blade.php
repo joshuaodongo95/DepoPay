@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-<div class="row">
     <div class="card bg-blueGray-100">
         <div class="card-header">
             <div class="card-header-container">
@@ -38,7 +37,7 @@
                                 {{ trans('cruds.role.fields.permissions') }}
                             </th>
                             <td>
-                                @foreach($role->permissions as $key => $entry)
+                                @foreach ($role->permissions as $key => $entry)
                                     <span class="badge badge-relationship">{{ $entry->title }}</span>
                                 @endforeach
                             </td>
@@ -58,5 +57,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection
