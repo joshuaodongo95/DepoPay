@@ -55,7 +55,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     // Subscriptions
     Route::post('subscriptions/csv', [SubscriptionController::class, 'csvStore'])->name('subscriptions.csv.store');
     Route::put('subscriptions/csv', [SubscriptionController::class, 'csvUpdate'])->name('subscriptions.csv.update');
-    Route::resource('subscriptions', SubscriptionController::class, ['except' => ['store', 'update', 'destroy']]);
+    Route::resource('subscriptions', SubscriptionController::class, ['except' => ['update', 'destroy']]);
 
     // Audit Logs
     Route::resource('audit-logs', AuditLogController::class, ['except' => ['store', 'update', 'destroy', 'create', 'edit']]);

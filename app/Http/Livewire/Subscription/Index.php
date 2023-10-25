@@ -67,16 +67,32 @@ class Index extends Component
 
     public function render()
     {
-        $query = Subscription::with(['customer', 'paymentPlan', 'product'])->advancedFilter([
-            's'               => $this->search ?: null,
-            'order_column'    => $this->sortBy,
-            'order_direction' => $this->sortDirection,
-        ]);
+        $user = auth()->user();
+        if (auth()->user()->isAdmin) {
+            $subscriptions = Subscription::with(['customer', 'paymentPlan', 'product'])
+                ->advancedFilter([
+                    's'               => $this->search ?: null,
+                    'order_column'    => $this->sortBy,
+                    'order_direction' => $this->sortDirection,
+                ])
+                ->paginate($this->perPage);
+        } else {
+            $subscriptions = Subscription::with(['customer', 'paymentPlan', 'product'])
+                ->where('customer_id', $user->id)
+                ->advancedFilter([
+                    's'               => $this->search ?: null,
+                    'order_column'    => $this->sortBy,
+                    'order_direction' => $this->sortDirection,
+                ])
+                ->paginate($this->perPage);
+        }
 
-        $subscriptions = $query->paginate($this->perPage);
+        // Ensure $subscriptions is an empty array when it's null
+        $subscriptions = $subscriptions ?: [];
 
-        return view('livewire.subscription.index', compact('query', 'subscriptions'));
+        return view('livewire.subscription.index', compact('subscriptions'));
     }
+
 
     public function deleteSelected()
     {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Subscription;
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 class HomeController
@@ -154,7 +155,7 @@ class HomeController
         if (! array_key_exists('fields', $settings3)) {
             $settings3['fields'] = [];
         }
+        return view('user.admin', compact('chart1', 'chart2', 'settings3'));
 
-        return view('partials.admin', compact('chart1', 'chart2', 'settings3'));
     }
 }
