@@ -3,18 +3,20 @@
         <div class="w-full sm:w-1/2">
             Per page:
             <select wire:model="perPage" class="form-select w-full sm:w-1/6">
-                @foreach($paginationOptions as $value)
+                @foreach ($paginationOptions as $value)
                     <option value="{{ $value }}">{{ $value }}</option>
                 @endforeach
             </select>
 
             @can('subscription_delete')
-                <button class="btn btn-rose ml-3 disabled:opacity-50 disabled:cursor-not-allowed" type="button" wire:click="confirm('deleteSelected')" wire:loading.attr="disabled" {{ $this->selectedCount ? '' : 'disabled' }}>
+                <button class="btn btn-rose ml-3 disabled:opacity-50 disabled:cursor-not-allowed" type="button"
+                    wire:click="confirm('deleteSelected')" wire:loading.attr="disabled"
+                    {{ $this->selectedCount ? '' : 'disabled' }}>
                     {{ __('Delete Selected') }}
                 </button>
             @endcan
 
-            @if(file_exists(app_path('Http/Livewire/ExcelExport.php')))
+            @if (file_exists(app_path('Http/Livewire/ExcelExport.php')))
                 <livewire:excel-export model="Subscription" format="csv" />
                 <livewire:excel-export model="Subscription" format="xlsx" />
                 <livewire:excel-export model="Subscription" format="pdf" />
@@ -100,13 +102,15 @@
                                 {{ $subscription->id }}
                             </td>
                             <td>
-                                @if($subscription->customer)
-                                    <span class="badge badge-relationship">{{ $subscription->customer->name ?? '' }}</span>
+                                @if ($subscription->customer)
+                                    <span
+                                        class="badge badge-relationship">{{ $subscription->customer->name ?? '' }}</span>
                                 @endif
                             </td>
                             <td>
-                                @if($subscription->customer)
-                                    <a class="link-light-blue" href="mailto:{{ $subscription->customer->email ?? '' }}">
+                                @if ($subscription->customer)
+                                    <a class="link-light-blue"
+                                        href="mailto:{{ $subscription->customer->email ?? '' }}">
                                         <i class="far fa-envelope fa-fw">
                                         </i>
                                         {{ $subscription->customer->email ?? '' }}
@@ -117,12 +121,13 @@
                                 {{ $subscription->ref }}
                             </td>
                             <td>
-                                @if($subscription->paymentPlan)
-                                    <span class="badge badge-relationship">{{ $subscription->paymentPlan->name ?? '' }}</span>
+                                @if ($subscription->paymentPlan)
+                                    <span
+                                        class="badge badge-relationship">{{ $subscription->paymentPlan->name ?? '' }}</span>
                                 @endif
                             </td>
                             <td>
-                                @if($subscription->paymentPlan)
+                                @if ($subscription->paymentPlan)
                                     {{ $subscription->paymentPlan->duration_label }}
                                 @endif
                             </td>
@@ -133,41 +138,46 @@
                                 {{ $subscription->currency }}
                             </td>
                             <td>
-                                @if($subscription->product)
-                                    <span class="badge badge-relationship">{{ $subscription->product->name ?? '' }}</span>
+                                @if ($subscription->product)
+                                    <span
+                                        class="badge badge-relationship">{{ $subscription->product->name ?? '' }}</span>
                                 @endif
                             </td>
                             <td>
-                                @if($subscription->product)
+                                @if ($subscription->product)
                                     {{ $subscription->product->description ?? '' }}
                                 @endif
                             </td>
                             <td>
-                                @if($subscription->product)
+                                @if ($subscription->product)
                                     {{ $subscription->product->price ?? '' }}
                                 @endif
                             </td>
                             <td>
                                 <div class="flex justify-end">
                                     @can('subscription_show')
-                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.subscriptions.show', $subscription) }}">
+                                        <a class="btn btn-sm btn-info mr-2"
+                                            href="{{ route('admin.subscriptions.show', $subscription) }}">
                                             {{ trans('global.view') }}
                                         </a>
                                     @endcan
                                     @can('subscription_edit')
-                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.subscriptions.edit', $subscription) }}">
+                                        <a class="btn btn-sm btn-success mr-2"
+                                            href="{{ route('admin.subscriptions.edit', $subscription) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan
                                     @can('subscription_delete')
-                                        <button class="btn btn-sm btn-rose mr-2" type="button" wire:click="confirm('delete', {{ $subscription->id }})" wire:loading.attr="disabled">
+                                        <button class="btn btn-sm btn-rose mr-2" type="button"
+                                            wire:click="confirm('delete', {{ $subscription->id }})"
+                                            wire:loading.attr="disabled">
                                             {{ trans('global.delete') }}
                                         </button>
                                     @endcan
                                 </div>
                             </td>
                         </tr>
-                        @empty
+                    @empty
                         <tr>
                             <td colspan="10">No entries found.</td>
                         </tr>
@@ -179,7 +189,7 @@
 
     <div class="card-body">
         <div class="pt-3">
-            @if($this->selectedCount)
+            @if ($this->selectedCount)
                 <p class="text-sm leading-5">
                     <span class="font-medium">
                         {{ $this->selectedCount }}
@@ -195,10 +205,10 @@
 @push('scripts')
     <script>
         Livewire.on('confirm', e => {
-    if (!confirm("{{ trans('global.areYouSure') }}")) {
-        return
-    }
-@this[e.callback](...e.argv)
-})
+            if (!confirm("{{ trans('global.areYouSure') }}")) {
+                return
+            }
+            @this[e.callback](...e.argv)
+        })
     </script>
 @endpush
