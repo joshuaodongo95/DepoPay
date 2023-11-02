@@ -92,10 +92,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <table class="show-cart table">
-
-                    </table>
-                    <div class="grand-total">Total price: Ugx <span class="total-cart"></span></div>
+                    <form action="" method="POST">
+                        @csrf
+                        <table class="show-cart table">
+                        </table>
+                        <div class="grand-total">Total price: Ugx <span class="total-cart"></span></div>
+                        <button type="submit" class="btn btn-primary float-right">Subscribe</button>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
