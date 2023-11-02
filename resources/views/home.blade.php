@@ -16,6 +16,7 @@
     - custom css link
   -->
     <link rel="stylesheet" href="{{ asset('assets/css/style-prefix.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/userstyle.css') }}">
 
     <!--
     - google font link
@@ -24,6 +25,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.0/css/all.min.css">
 
 </head>
 
@@ -75,6 +78,33 @@
 
         </div>
 
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Your Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST">
+                        @csrf
+                        <table class="show-cart table">
+                        </table>
+                        <div class="grand-total">Total price: Ugx <span class="total-cart"></span></div>
+                        <button type="submit" class="btn btn-primary float-right">Subscribe</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -166,6 +196,7 @@
                 <div class="header-top-actions">
 
                     <select name="currency">
+
                         <option value="ugx"> Ugx </option>
                         <option value="ksh"> Ksh </option>
 
@@ -196,7 +227,8 @@
 
                 <div class="header-search-container">
 
-                    <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+                    <input type="search" name="search" class="search-field"
+                        placeholder="Enter your product name...">
 
                     <button class="search-btn">
                         <ion-icon name="search-outline"></ion-icon>
@@ -209,6 +241,9 @@
                     @if (Route::has('login'))
                         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
+                                {{-- <a class="action-btn" href="{{ route('profile.show') }}">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                </a> --}}
                                 <a class="action-btn" href="{{ route('admin.user') }}">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </a>
@@ -221,14 +256,17 @@
                         </div>
                     @endif
 
+                    <a class="action-btn" href="#"
+                        onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                        <ion-icon name="log-in-outline"></ion-icon>
+                    </a>
                     <button class="action-btn">
                         <ion-icon name="heart-outline"></ion-icon>
                         <span class="count">0</span>
                     </button>
-
-                    <button class="action-btn">
+                    <button class="action-btn" data-toggle="modal" data-target="#staticBackdrop">
                         <ion-icon name="bag-handle-outline"></ion-icon>
-                        <span class="count">0</span>
+                        <span class="count total-count">0</span>
                     </button>
 
                 </div>
@@ -703,21 +741,11 @@
                             <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
                         </button>
 
-                        <ul class="submenu-category-list" data-accordion>
-
-                            <li class="submenu-category">
-                                <a href="#" class="submenu-title">English</a>
-                            </li>
-
-                            <li class="submenu-category">
-                                <a href="#" class="submenu-title">Espa&ntilde;ol</a>
-                            </li>
-
-                            <li class="submenu-category">
-                                <a href="#" class="submenu-title">Fren&ccedil;h</a>
-                            </li>
-
-                        </ul>
+                        @if (file_exists(app_path('Http/Livewire/LanguageSwitcher.php')))
+                            <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+                                <livewire:language-switcher />
+                            </ul>
+                        @endif
 
                     </li>
 
@@ -2269,7 +2297,10 @@
                                             <del>Ugx 200.00</del>
                                         </div>
 
-                                        <button class="add-cart-btn">add to cart</button>
+                                        {{-- <button type="button" data-name="Short-Sleeve" data-price="800"
+                                            class="add-cart-btn border-radius-5">Add to cart</button> --}}
+                                        <button type="button" data-name="Oxford" data-price="1200"
+                                            class="default-btn border-radius-5"> Add to cart</button>
 
                                         <div class="showcase-status">
                                             <div class="wrapper">
@@ -2448,7 +2479,8 @@
                                             <ion-icon name="repeat-outline"></ion-icon>
                                         </button>
 
-                                        <button class="btn-action">
+                                        <button type="button" class="btn-action default-btn"
+                                            data-name="Mens Winter Leathers Jackets" data-price="75.00">
                                             <ion-icon name="bag-add-outline"></ion-icon>
                                         </button>
 
@@ -3661,18 +3693,26 @@
         </div>
 
     </footer>
+    <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!--
     - custom js link
   -->
     <script src="{{ asset('assets/js/script.js') }}"></script>
-
+    <script src="{{ asset('assets/js/cart.js') }}"></script>
     <!--
     - ionicon link
   -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
