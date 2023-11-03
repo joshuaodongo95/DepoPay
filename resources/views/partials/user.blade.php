@@ -81,7 +81,7 @@
     </div> --}}
 
     <!-- Modal -->
-    <div class="cartmodal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    <div class="fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -95,7 +95,7 @@
                     <table class="show-cart table">
 
                     </table>
-                    <div class="grand-total">Total price: ₹<span class="total-cart"></span></div>
+                    <div class="grand-total">Total price: Ugx <span class="total-cart"></span></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -262,7 +262,7 @@
                     <button class="action-btn" data-toggle="modal" data-target="#staticBackdrop">
                         <ion-icon name="bag-handle-outline"></ion-icon>
                         <span class="count total-count">0</span>
-                    </button>   
+                    </button>
 
                 </div>
 
