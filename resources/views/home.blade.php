@@ -241,9 +241,6 @@
                     @if (Route::has('login'))
                         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
-                                {{-- <a class="action-btn" href="{{ route('profile.show') }}">
-                                    <ion-icon name="person-outline"></ion-icon>
-                                </a> --}}
                                 <a class="action-btn" href="{{ route('admin.user') }}">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </a>
@@ -256,10 +253,10 @@
                         </div>
                     @endif
 
-                    <a class="action-btn" href="#"
+                    {{-- <a class="action-btn" href="#"
                         onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                         <ion-icon name="log-in-outline"></ion-icon>
-                    </a>
+                    </a> --}}
                     <button class="action-btn">
                         <ion-icon name="heart-outline"></ion-icon>
                         <span class="count">0</span>
